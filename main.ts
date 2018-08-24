@@ -798,6 +798,18 @@ namespace mbit_小车类 {
      * *****************************************************************
      * @param index
      */
+　　//% blockId=mbit_Min_Motor1_Shake block="Min_Motor1_Shake"
+    //% weight=103
+    //% blockGap=10
+    //% color="#C814B8"
+    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=12
+    export function Min_Motor_Shake(): void {
+         
+        setPwm(0, 0, 4000);
+        
+
+    }
+　　　
 　　//% blockId=mbit_Min_Motor_Shake block="Min_Motor_Shake"
     //% weight=102
     //% blockGap=10
@@ -806,21 +818,7 @@ namespace mbit_小车类 {
     export function Min_Motor_Shake(): void {
          
         setPwm(0, 0, 0);
-        setPwm(1, 0, 4000);
-　　　  setPwm(2, 0, 0);
-        setPwm(3, 0, 0);
-        setPwm(4, 0, 0);
-　　　　setPwm(5, 0, 4000);
-        setPwm(6, 0, 2000);
-        setPwm(7, 0, 4000);
-        setPwm(8, 0, 2000);
-　　　  setPwm(9, 0, 4000);
-        setPwm(10,0, 4000);
-        setPwm(11,0, 2000);
-　　　　setPwm(12,0, 4000);
-        setPwm(13, 0, 2000);
-        setPwm(14, 0, 2000);
-        setPwm(15, 0, 2000);
+        
 
     }
 　　　
