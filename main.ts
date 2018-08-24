@@ -803,7 +803,7 @@ namespace mbit_小车类 {
     //% blockGap=10
     //% color="#C814B8"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
-    export function Min_Motor_Shake(): neopixel.Strip {
+    export function Min_Motor_Shake(): void {
          
         setPwm(0, 0, 800);
 
