@@ -806,7 +806,7 @@ namespace mbit_小车类 {
     export function Min_Motor_Shake(): void {
          
         setPwm(0, 0, 4000);
-        setPwm(1, 0, 4000);
+        setPwm(1, 0, 200);
 　　　   setPwm(2, 0, 4000);
     }
 　　　
