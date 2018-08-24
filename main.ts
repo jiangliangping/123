@@ -1,4 +1,4 @@
-﻿/*
+/*
 Copyright (C): 2010-2019, Shenzhen Yahboom Tech
 modified from liusen
 load dependency
@@ -798,6 +798,17 @@ namespace mbit_小车类 {
      * *****************************************************************
      * @param index
      */
+//% blockId=mbit_Min_Motor_Shake block="Min_Motor_Shake"
+    //% weight=102
+    //% blockGap=10
+    //% color="#C814B8"
+    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
+    export function Min_Motor_Shake(): neopixel.Strip {
+         
+        setPwm(0, 0, 800);
+
+    }
+　　　
     //% blockId=mbit_RGB_Car_Big2 block="RGB_Car_Big2|value %value"
     //% weight=101
     //% blockGap=10

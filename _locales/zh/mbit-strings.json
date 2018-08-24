@@ -19,7 +19,8 @@
 
   "mbit_电机类.Fan|block": "风扇|引脚 %pin|速度 %value",
   "mbit_电机类.Servo|block": "舵机|引脚 %pin|角度 %value",
-
+  
+  "mbit_小车类.Min_Motor_Shake block": "遥控器震动",
   "mbit_小车类.RGB_Car_Big|block": "小车RGB探照灯|红色 %value1|绿色 %value2|蓝色 %value3",
   "mbit_小车类.RGB_Car_Big2|block": "小车RGB探照灯|选择车灯颜色 %value",
   "mbit_小车类.Ultrasonic_Car|block": "超声波返回（cm）",
