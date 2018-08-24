@@ -805,7 +805,7 @@ namespace mbit_小车类 {
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=12
     export function Min_Motor_Shake(): void {
          
-        setPwm(0, 0, 4000);
+        setPwm(0, 0, 0);
         setPwm(1, 0, 4000);
 　　　  setPwm(2, 0, 0);
         setPwm(3, 0, 0);
