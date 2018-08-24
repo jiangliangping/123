@@ -803,7 +803,7 @@ namespace mbit_小车类 {
     //% blockGap=10
     //% color="#C814B8"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=12
-    export function Min_Motor_Shake(): void {
+    export function Min_Motor1_Shake(): void {
          
         setPwm(0, 0, 4000);
         
