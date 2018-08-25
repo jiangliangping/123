@@ -814,7 +814,7 @@ namespace mbit_小车类 {
     //% blockGap=10
     //% color="#C814B8"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=5
-    export function RemoteButton(pin: DigitalPin, value: RemoteButton): boolean {
+    export function RemoteButton(pin: DigitalPin, value: Motorshock): boolean {
 
         pins.setPull(pin, PinPullMode.PullUp);
         if (pins.digitalReadPin(pin) == value) {
