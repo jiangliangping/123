@@ -803,7 +803,7 @@ namespace mbit_小车类 {
      * *****************************************************************
      * @param index
      */
-　/**　//% blockId=mbit_Min_Motorstop_Shake block="Min_Motorstop_Shake"
+　　//% blockId=mbit_Min_Motorstop_Shake block="Min_Motorstop_Shake"
     //% weight=103
     //% blockGap=10
     //% color="#C814B8"
@@ -814,7 +814,7 @@ namespace mbit_小车类 {
         
 
     }
-　*/　　
+　　　
 　　//% blockId=mbit_Min_Motor_Shake block="Min_Motor_Shake|value %value"
     //% weight=102
     //% blockGap=10
@@ -823,7 +823,7 @@ namespace mbit_小车类 {
     export function Min_Motor_Shake(value: Motorshock): void {
         swich(value){
         		case Motorshock.OFF{
-        			setPwm(0, 0, 4095);
+        			setPwm(0, 0, 4000);
         			break;
         		}
         		case Motorshock.ON{
