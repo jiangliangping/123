@@ -453,12 +453,12 @@ namespace mbit_小车类 {
 
     let initialized = false
     let yahStrip: neopixel.Strip;
-//		export enum Motorshock {
-//				//% blockId="OFF" block="关"
-//        OFF = 0,
-//        //% blockId="ON" block="开"
-//        ON  = 1
-//			}
+		export enum Motorshock {
+				//% blockId="OFF" block="关"
+        OFF = 0,
+        //% blockId="ON" block="开"
+        ON  = 1
+			}
     export enum enColor {
 
         //% blockId="OFF" block="灭"
@@ -822,11 +822,11 @@ namespace mbit_小车类 {
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=12
     export function Min_Motor_Shake(value: Motorshock): void {
         swich(value){
-        		case Motorshock.OFF{
+        		case Motorshock.OFF：{
         			setPwm(0, 0, 4000);
         			break;
         		}
-        		case Motorshock.ON{
+        		case Motorshock.ON：{
         			setPwm(0, 0, 0);
         			break;
         		}
