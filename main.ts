@@ -457,7 +457,7 @@ namespace mbit_小车类 {
 				//% blockId="OFF" block="关"
         OFF = 0,
         //% blockId="ON" block="开"
-        ON
+        ON  = 1
 			}
     export enum enColor {
 
@@ -810,7 +810,7 @@ namespace mbit_小车类 {
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=12
     export function Min_Motorstop_Shake(): void {
          
-        setPwm(0, 0, 4000);
+        setPwm(0, 0, 4095);
         
 
     }
