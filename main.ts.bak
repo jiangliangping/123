@@ -803,38 +803,38 @@ namespace mbit_小车类 {
      * *****************************************************************
      * @param index
      */
-//　　//% blockId=mbit_Min_Motorstop_Shake block="Min_Motorstop_Shake"
-//    //% weight=103
-//    //% blockGap=10
-//    //% color="#C814B8"
-//    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=12
-//    export function Min_Motorstop_Shake(): void {
-//         
-//        setPwm(0, 0, 4095);
-//        
-//
-//    }
-//　　　
-//　　//% blockId=mbit_Min_Motor_Shake block="Min_Motor_Shake|value %value"
-//    //% weight=102
-//    //% blockGap=10
-//    //% color="#C814B8"
-//    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=12
-//    export function Min_Motor_Shake(value: Motorshock): void {
-//        swich(value){
-//        		case Motorshock.OFF{
-//        			setPwm(0, 0, 4000);
-//        			break;
-//        		}
-//        		case Motorshock.ON{
-//        			setPwm(0, 0, 0);
-//        			break;
-//        		}
-//        } 
-//        
-//        
-//
-//    }
+　　//% blockId=mbit_Min_Motorstop_Shake block="Min_Motorstop_Shake"
+    //% weight=103
+    //% blockGap=10
+    //% color="#C814B8"
+    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=12
+    export function Min_Motorstop_Shake(): void {
+         
+        setPwm(0, 0, 4095);
+        
+
+    }
+　　　
+　　//% blockId=mbit_Min_Motor_Shake block="Min_Motor_Shake|value %value"
+    //% weight=102
+    //% blockGap=10
+    //% color="#C814B8"
+    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=12
+    export function Min_Motor_Shake(value: Motorshock): void {
+        swich(value){
+        		case Motorshock.OFF{
+        			setPwm(0, 0, 4000);
+        			break;
+        		}
+        		case Motorshock.ON{
+        			setPwm(0, 0, 0);
+        			break;
+        		}
+        } 
+        
+        
+
+    }
 　　　
     //% blockId=mbit_RGB_Car_Big2 block="RGB_Car_Big2|value %value"
     //% weight=101
