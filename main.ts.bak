@@ -814,7 +814,7 @@ namespace mbit_小车类 {
     //% blockGap=10
     //% color="#87CEEB"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=5
-    export function RemoteButton(pin: DigitalPin, value: RemoteButton): void {
+    export function RemoteButton(pin: DigitalPin, value: enButton): void {
 
         pins.setPull(pin, PinPullMode.PullUp);
         if (pins.digitalReadPin(pin) == value) {
@@ -828,7 +828,7 @@ namespace mbit_小车类 {
 　　//% blockId=mbit_Min_Motor_Shake block="Min_Motor_Shake|value %value"
     //% weight=102
     //% blockGap=10
-    //% color="#87CEEB"
+    //% color="#C814B8"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=12
     export function Min_Motor_Shake(value: Motorshock): void {
         switch (value) {
