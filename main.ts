@@ -828,7 +828,7 @@ namespace mbit_小车类 {
 　　//% blockId=mbit_Min_Motor_Shake block="Min_Motor_Shake|value %value"
     //% weight=102
     //% blockGap=10
-    //% color="#C814B8"
+    //% color="#87CEEB"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=12
     export function Min_Motor_Shake(value: Motorshock): void {
         switch (value) {
