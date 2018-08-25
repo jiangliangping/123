@@ -819,7 +819,7 @@ namespace mbit_小车类 {
     //% weight=102
     //% blockGap=10
     //% color="#C814B8"
-    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=12
+    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
     export function Min_Motor_Shake(value: Motorshock): void {
         swich(value){
         		case Motorshock.OFF：{
