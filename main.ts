@@ -803,7 +803,7 @@ namespace mbit_小车类 {
      * *****************************************************************
      * @param index
      */
-     //% blockId=mbit_Min_Motorstop_Shake block="Min_Motorstop_Shake"
+    //% blockId=mbit_Min_Motorstop_Shake block="Min_Motorstop_Shake"
     //% weight=103
     //% blockGap=10
     //% color="#C814B8"
@@ -811,8 +811,6 @@ namespace mbit_小车类 {
     export function Min_Motorstop_Shake(): void {
          
         setPwm(0, 0, 4095);
-        
-
     }
 　　//% blockId=mbit_Min_Motor_Shake block="Min_Motor_Shake|value %value"
     //% weight=102
@@ -821,11 +819,11 @@ namespace mbit_小车类 {
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=12
     export function Min_Motor_Shake(value: Motorshock): void {
         switch (value) {
-        		case Motorshock.OFF：{
+        		case Motorshock.OFF:{
         			setPwm(0, 0, 4000);
         			break;
         		}
-        		case Motorshock.ON：{
+        		case Motorshock.ON:{
         			setPwm(0, 0, 0);
         			break;
         		}
