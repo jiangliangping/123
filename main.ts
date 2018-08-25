@@ -453,7 +453,7 @@ namespace mbit_小车类 {
 
     let initialized = false
     let yahStrip: neopixel.Strip;
-    export enum RemotoButton {
+    export enum RemotoButton1 {
         //% blockId="Press" block="按下"
         Press = 0,
         //% blockId="Realse" block="松开"
@@ -816,7 +816,7 @@ namespace mbit_小车类 {
     //% blockGap=10
     //% color="#0000CD"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=5
-    export function RemoteButton(pin: DigitalPin, value: RemotoButton): boolean {
+    export function RemoteButton(pin: DigitalPin, value: RemotoButton1): boolean {
 
         pins.setPull(pin, PinPullMode.PullUp);
         if (pins.digitalReadPin(pin) == value) {
