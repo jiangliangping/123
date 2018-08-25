@@ -453,6 +453,12 @@ namespace mbit_小车类 {
 
     let initialized = false
     let yahStrip: neopixel.Strip;
+    export enum Motorshock {
+				//% blockId="OFF" block="关"
+        OFF = 0,
+        //% blockId="ON" block="开"
+        ON
+			}
     export enum enColor {
 
         //% blockId="OFF" block="灭"
