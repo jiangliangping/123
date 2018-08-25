@@ -453,6 +453,12 @@ namespace mbit_小车类 {
 
     let initialized = false
     let yahStrip: neopixel.Strip;
+    export enum RemotoButton {
+        //% blockId="Press" block="按下"
+        Press = 0,
+        //% blockId="Realse" block="松开"
+        Realse = 1
+    }
     export enum Motorshock {
 				//% blockId="OFF" block="关"
         OFF = 0,
@@ -803,6 +809,22 @@ namespace mbit_小车类 {
      * *****************************************************************
      * @param index
     */
+    //% blockId=mbit_RemoteButton block="RemoteButton|pin %pin|value %value"
+    //% weight=103
+    //% blockGap=10
+    //% color="#808080"
+    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=5
+    export function RemoteButton(pin: DigitalPin, value: RemoteButton): boolean {
+
+        pins.setPull(pin, PinPullMode.PullUp);
+        if (pins.digitalReadPin(pin) == value) {
+            return true;
+        }
+        else {
+            return false;
+        }
+
+    }  
 　　//% blockId=mbit_Min_Motor_Shake block="Min_Motor_Shake|value %value"
     //% weight=102
     //% blockGap=10
