@@ -806,6 +806,7 @@ namespace mbit_小车类 {
     }
 
 
+
     /**
      * *****************************************************************
      * @param index
@@ -813,9 +814,9 @@ namespace mbit_小车类 {
     //% blockId=mbit_RemoteButton block="RemoteButton|pin %pin|value %value"
     //% weight=103
     //% blockGap=10
-    //% color="#C814B8"
+    //% color="#0000CD"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=5
-    export function RemoteButton(pin: DigitalPin, value: enButton): void {
+    export function RemoteButton(pin: DigitalPin, value: RemotoButton): boolean {
 
         pins.setPull(pin, PinPullMode.PullUp);
         if (pins.digitalReadPin(pin) == value) {
@@ -944,7 +945,7 @@ namespace mbit_小车类 {
     }
 
 
-	//% blockId=mbit_ultrasonic_car block="ultrasonic return distance(cm)"
+		//% blockId=mbit_ultrasonic_car block="ultrasonic return distance(cm)"
     //% color="#006400"
     //% weight=98
     //% blockGap=10
