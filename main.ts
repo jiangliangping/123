@@ -810,11 +810,11 @@ namespace mbit_小车类 {
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=12
     export function Min_Motor_Shake(value: Motorshock): void {
         switch (value) {
-        		case Motorshock.OFF:{
+        		case Motorshock.OFF: {
         			setPwm(0, 0, 4000);
         			break;
         		}
-        		case Motorshock.ON:{
+        		case Motorshock.ON: {
         			setPwm(0, 0, 0);
         			break;
         		}
