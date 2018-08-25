@@ -815,7 +815,7 @@ namespace mbit_小车类 {
 
     }
 　　　
-　　//% blockId=mbit_Min_Motor_Shake block="Min_Motor_Shake|value %value"
+　/**　//% blockId=mbit_Min_Motor_Shake block="Min_Motor_Shake|value %value"
     //% weight=102
     //% blockGap=10
     //% color="#C814B8"
@@ -835,7 +835,7 @@ namespace mbit_小车类 {
         
 
     }
-　　　
+　　*/　
     //% blockId=mbit_RGB_Car_Big2 block="RGB_Car_Big2|value %value"
     //% weight=101
     //% blockGap=10
