@@ -452,7 +452,31 @@ namespace mbit_小车类 {
 
     let initialized = false
     let yahStrip: neopixel.Strip;
-    
+    export enum value12 {
+        //% blockId="0" block="0"
+        0 = 0,
+        //% blockId="1" block="1"
+        1,
+        //% blockId="2" block="2"
+        2,
+        //% blockId="3" block="3"
+        3,
+        //% blockId="4" block="4"
+        4,
+        //% blockId="5" block="5"
+        5,
+        //% blockId="6" block="6"
+        6,
+        //% blockId="7" block="7"
+        7,
+        //% blockId="8" block="8"
+        8,
+        //% blockId="9" block="9"
+        9,
+        //% blockId="10" block="10"
+        10
+    }
+
     export enum RemotoButton1 {
         //% blockId="Press" block="按下"
         Press = 0,
@@ -811,6 +835,16 @@ namespace mbit_小车类 {
      * *****************************************************************
      * @param index
     */ 
+    //% blockId=mbit_PWM block="PWM|speed2 %speed2 |speed1 %speed1"
+    //% weight=104
+    //% blockGap=10
+    //% color="#640000"
+    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=12
+    export function PWM(speed2: number, speed1: number): void {
+       
+    		setPwm(speed2, 0, speed1);
+        			
+    }　
     //% blockId=mbit_RemoteButton block="RemoteButton|pin %pin|value %value"
     //% weight=103
     //% blockGap=10
