@@ -816,14 +816,14 @@ namespace mbit_小车类 {
     //% blockGap=10
     //% color="#C814B8"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=12
-    export function Min_Motor_Shake2(pin: DigitalPin, value: Motorshock): void {
-        switch (value) {
+    export function Min_Motor_Shake2(value12: value12, value2: Motorshock): void {
+        switch (value22) {
         		case Motorshock.OFF: {
-        			setPwm(pin, 0, 4000);
+        			setPwm(value12, 0, 4000);
         			break;
         		}
         		case Motorshock.ON: {
-        			setPwm(pin, 0, 0);
+        			setPwm(value12, 0, 0);
         			break;
         		}
         } 
