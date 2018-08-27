@@ -814,7 +814,7 @@ namespace mbit_小车类 {
     //% blockId=mbit_RemoteButton block="RemoteButton|pin %pin|value %value"
     //% weight=103
     //% blockGap=10
-    //% color="#C814B8"
+    //% color="#87CEEB"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=5
     export function RemoteButton(pin: DigitalPin, value: RemotoButton1): boolean {
 

@@ -811,6 +811,27 @@ namespace mbit_小车类 {
      * *****************************************************************
      * @param index
     */ 
+    //% blockId=mbit_Min_Motor_Shake2 block="Min_Motor_Shake2|pin %pin|value %value"
+    //% weight=104
+    //% blockGap=10
+    //% color="#C814B8"
+    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=12
+    export function Min_Motor_Shake2(pin: DigitalPin, value: Motorshock): void {
+        switch (value) {
+        		case Motorshock.OFF: {
+        			setPwm(pin, 0, 4000);
+        			break;
+        		}
+        		case Motorshock.ON: {
+        			setPwm(pin, 0, 0);
+        			break;
+        		}
+        } 
+        
+        
+
+    }
+　　　
     //% blockId=mbit_RemoteButton block="RemoteButton|pin %pin|value %value"
     //% weight=103
     //% blockGap=10
