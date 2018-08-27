@@ -835,14 +835,14 @@ namespace mbit_小车类 {
      * *****************************************************************
      * @param index
     */ 
-    //% blockId=mbit_PWM block="PWM|value12 %value12 |speed1 %number"
+    //% blockId=mbit_PWM block="PWM|speed2 %speed2 |speed1 %speed1"
     //% weight=104
     //% blockGap=10
     //% color="#640000"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=12
-    export function PWM(value12: value12, speed1: number): void {
+    export function PWM(speed2: number, speed1: number): void {
        
-    		setPwm(value12, 0, number);
+    		setPwm(speed2, 0, speed1);
         			
          
         
