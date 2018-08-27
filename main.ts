@@ -819,7 +819,7 @@ namespace mbit_小车类 {
     export function RemoteButton(pin: DigitalPin, value: RemotoButton1): boolean {
 
         pins.setPull(pin, PinPullMode.PullUp);
-        if (pins.digitalReadPin(pin) == value) {
+        if (pins.digitalReadPin(DigitalPin.P13) == value) {
             return true;
         }
         else {
