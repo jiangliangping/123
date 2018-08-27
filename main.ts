@@ -836,7 +836,7 @@ namespace mbit_小车类 {
      * @param index
     */ 
     
-    //% blockId=mbit_PWM block="PWM|speed2 %speed2 |speed1 %speed1"
+   /* //% blockId=mbit_PWM block="PWM|speed2 %speed2 |speed1 %speed1"
     //% weight=104
     //% blockGap=10
     //% color="#640000"
@@ -850,7 +850,7 @@ namespace mbit_小车类 {
         
 
     }
-　　　
+　　*/　
     //% blockId=mbit_RemoteButton block="RemoteButton|pin %pin|value %value"
     //% weight=103
     //% blockGap=10
