@@ -835,22 +835,16 @@ namespace mbit_小车类 {
      * *****************************************************************
      * @param index
     */ 
-    //% blockId=mbit_Min_Motor_Shake2 block="Min_Motor_Shake2|pin %pin|value %value"
+    //% blockId=mbit_PWM block="PWM|value12 %value12 |speed1 %number"
     //% weight=104
     //% blockGap=10
     //% color="#640000"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=12
-    export function Min_Motor_Shake2(value12: value12, value: Motorshock): void {
-        switch (value) {
-        		case Motorshock.OFF: {
-        			setPwm(value12, 0, 4000);
-        			break;
-        		}
-        		case Motorshock.ON: {
-        			setPwm(value12, 0, 0);
-        			break;
-        		}
-        } 
+    export function PWM(value12: value12, speed1: number): void {
+       
+    		setPwm(value12, 0, number);
+        			
+         
         
         
 
