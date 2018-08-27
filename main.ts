@@ -827,6 +827,7 @@ namespace mbit_小车类 {
         }
 
     }  
+    
 　　//% blockId=mbit_Min_Motor_Shake block="Min_Motor_Shake|value %value"
     //% weight=102
     //% blockGap=10
