@@ -506,7 +506,7 @@ namespace mbit_小车类 {
         //% blockId="Pinkish" block="品红"
         Pinkish,
         //% blockId="Yellow" block="黄色"
-        Yellow,
+        Yellow
 
     }
     export enum enMusic {
@@ -1163,6 +1163,7 @@ namespace mbit_小车类 {
             case CarState.Car_SpinRight: Car_spinright(speed, speed); break;
         }
     }
+    
     //% blockId=mbit_CarCtrlSpeed2 block="CarCtrlSpeed2|%index|speed1 %speed1|speed2 %speed2"
     //% weight=91
     //% blockGap=10
