@@ -1,6 +1,0 @@
-{
-  "mbit_输入类.Min_Motor_Shake|block": "遥控器|震动 |%value", 
-  "mbit_输入类.Push_botton|block": "功能键|%value1|返回 %value",
-  "mbit_输入类.Rocker|block": "遥杆|返回 %value",
-  "mbit_输入类.Button|block": "按键|引脚 %pin|返回 %value"
-}

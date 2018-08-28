@@ -1,19 +1,18 @@
 {
-    "name": "mbit",
-    "version": "1.1.0",
-    "description": "Extension for YahBoom m:bit",
+    "name": "ArmBit",
+    "version": "1.0.0",
+    "description": "Extension for YahBoom ArmBit",
     "license": "MIT",
     "dependencies": {
         "core": "*",
-        "neopixel": "github:microsoft/pxt-neopixel#v0.3.10",
-        "Mbit_IR":  "github:lzty634158/yahboom_mbit_IR"
+        "neopixel": "github:microsoft/pxt-neopixel#v0.3.10"  
 	
 
     },
     "files": [
         "README.md",
         "main.ts",
-        "_locales/zh/mbit-strings.json"
+        "_locales/zh/armbit-strings.json"
 
     ],
     "testFiles": [
