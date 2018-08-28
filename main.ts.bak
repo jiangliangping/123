@@ -50,7 +50,7 @@ namespace ArmBit {
     }
 
     export enum Motorshock {
-	//% blockId="OFF" block="关"
+	      //% blockId="OFF" block="关"
         OFF = 0,
         //% blockId="ON" block="开"
         ON
@@ -153,27 +153,27 @@ namespace ArmBit {
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=6
     export function Push_botton(pin: Push_Button, value: enRocker): boolean {
 				
-	switch (Push_Button) {
-		case Push_Button.red:
-			pins.setPull(DigitalPin.P13, PinPullMode.PullUp);
+	      switch (pin) {
+		        case Push_Button.red: {
+			          pins.setPull(DigitalPin.P13, PinPullMode.PullUp);
             		let a = pins.digitalReadPin(DigitalPin.P13);
-			break;
-					
-		case Push_Button.green:
-			pins.setPull(DigitalPin.P14, PinPullMode.PullUp);
+		           	break;
+					  }
+	        	case Push_Button.green: {
+		          	pins.setPull(DigitalPin.P14, PinPullMode.PullUp);
             		let a = pins.digitalReadPin(DigitalPin.P14);
-			break;
-						
-		case Push_Button.blue:
-			pins.setPull(DigitalPin.P15, PinPullMode.PullUp);
+		          	break;
+						}
+		        case Push_Button.blue: {
+			          pins.setPull(DigitalPin.P15, PinPullMode.PullUp);
             		let a = pins.digitalReadPin(DigitalPin.P15);
-			break;
-					
-		case Push_Button.yellow:
-			pins.setPull(DigitalPin.P16, PinPullMode.PullUp);
+			          break;
+					  }
+		        case Push_Button.yellow: {
+		          	pins.setPull(DigitalPin.P16, PinPullMode.PullUp);
             		let a = pins.digitalReadPin(DigitalPin.P16);
-			break;
-					
+		          	break;
+					  }
 	}
     
         if (a == 0)
