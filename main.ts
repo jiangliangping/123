@@ -228,12 +228,12 @@ namespace ArmBit {
 
     }
 
-    //% blockId=ArmBit_Button block="Button|pin %pin|value %value"
+    //% blockId=ArmBit_aButton block="aButton|pin %pin|value %value"
     //% weight=98
     //% blockGap=10
     //% color="#C814B8"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=5
-    export function Button(pin: DigitalPin, value: enButton): boolean {
+    export function aButton(pin: DigitalPin, value: enButton): boolean {
 
         pins.setPull(pin, PinPullMode.PullUp);
         if (pins.digitalReadPin(pin) == value) {

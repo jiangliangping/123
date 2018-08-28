@@ -2,5 +2,5 @@
   "ArmBit.Min_Motor_Shake|block": "遥控器|震动 |%value", 
   "ArmBit.Push_botton|block": "功能键|%value1|返回 %value",
   "ArmBit.Rocker|block": "遥杆|返回 %value",
-  "ArmBit.Button|block": "按键|引脚 %pin|返回 %value"
+  "ArmBit.aButton|block": "按键|引脚 %pin|返回 %value"
 }
