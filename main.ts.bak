@@ -46,7 +46,7 @@ namespace mbit_输入类 {
 		//% blockId=mbit_Push_botton block="Push_botton|value1 %value1|value %value"
     //% weight=100
     //% blockGap=10
-    //% color="006400"
+    //% color="#C814B8"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=6
     export function Push_botton(pin: Push_Button, value: enRocker): boolean {
 				

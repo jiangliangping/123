@@ -81,17 +81,17 @@ namespace mbit_输入类 {
             return false;
 
     }
-    //% blockId=mbit_Rocker block="Rocker|VRX %pin1|VRY %pin2|SW %pin3|value %value"
+    //% blockId=mbit_Rocker block="Rocker|value %value"
     //% weight=99
     //% blockGap=10
     //% color="#808080"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=6
-    export function Rocker(pin1: AnalogPin, pin2: AnalogPin, pin3: DigitalPin, value: enRocker): boolean {
+    export function Rocker(value: enRocker): boolean {
 
-        pins.setPull(pin3, PinPullMode.PullUp);
-        let x = pins.analogReadPin(pin1);
-        let y = pins.analogReadPin(pin2);
-        let z = pins.digitalReadPin(pin3);
+        pins.setPull(DigitalPin.P8, PinPullMode.PullUp);
+        let x = pins.analogReadPin(AnalogPin.P1);
+        let y = pins.analogReadPin(AnalogPin.P2);
+        let z = pins.digitalReadPin(DigitalPin.P8);
         let now_state = enRocker.Nostate;
 
         if (x < 100) // 上
