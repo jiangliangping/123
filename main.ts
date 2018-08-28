@@ -27,33 +27,58 @@ namespace mbit_输入类 {
         Press
     }
 
-    export enum enTouch {
-        //% blockId="NoTouch" block="未触摸"
-        NoTouch = 0,
-        //% blockId="Touch" block="触摸"
-        Touch = 1
-    }
     export enum enButton {
         //% blockId="Press" block="按下"
         Press = 0,
         //% blockId="Realse" block="松开"
         Realse = 1
     }
-
-    //% blockId=mbit_TouchPad block="TouchPad|pin %pin|value %value"
+		export enum Push_Button {
+        //% blockId="red" block="红色"
+        red = 0,
+        //% blockId="blue" block="蓝色"
+        blue,
+        //% blockId="green" block="绿色"
+        green,
+        //% blockId="yellow" block="黄色"
+        yellow
+    }
+		//% blockId=mbit_Push_botton block="Push_botton|value1 %value1|value %value"
     //% weight=100
     //% blockGap=10
     //% color="#808080"
-    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=5
-    export function TouchPad(pin: DigitalPin, value: enTouch): boolean {
-
-        pins.setPull(pin, PinPullMode.PullUp);
-        if (pins.digitalReadPin(pin) == value) {
+    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=6
+    export function Push_botton(pin: Push_Button, value: enRocker): boolean {
+				
+				switch (Push_Button) {
+					case red:
+						pins.setPull(DigitalPin.P13, PinPullMode.PullUp);
+            let a = pins.digitalReadPin(DigitalPin.P13);
+						break;
+					
+					case green:
+						pins.setPull(DigitalPin.P14, PinPullMode.PullUp);
+            let a = pins.digitalReadPin(DigitalPin.P14);
+						break;
+					
+					case blue:
+						pins.setPull(DigitalPin.P15, PinPullMode.PullUp);
+            let a = pins.digitalReadPin(DigitalPin.P15);
+						break;
+					
+					case yellow:
+						pins.setPull(DigitalPin.P16, PinPullMode.PullUp);
+            let a = pins.digitalReadPin(DigitalPin.P16);
+						break;
+					
+				}
+    
+        if (a == 0)
+            now_state = enRocker.Press;
+        if (now_state == value)
             return true;
-        }
-        else {
+        else
             return false;
-        }
 
     }
     //% blockId=mbit_Rocker block="Rocker|VRX %pin1|VRY %pin2|SW %pin3|value %value"
