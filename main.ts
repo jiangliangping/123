@@ -128,7 +128,7 @@ namespace ArmBit {
         pins.i2cWriteBuffer(PCA9685_ADD, buf);
     }
     
-    //% blockId=mbit_Min_Motor_Shake block="Min_Motor_Shake|value %value"
+    //% blockId=ArmBit_Min_Motor_Shake block="Min_Motor_Shake|value %value"
     //% weight=101
     //% blockGap=10
     //% color="#C814B8"
@@ -146,7 +146,7 @@ namespace ArmBit {
         } 
     }
     
-    //% blockId=mbit_Push_botton block="Push_botton|value1 %value1|value %value"
+    //% blockId=ArmBit_Push_botton block="Push_botton|value1 %value1|value %value"
     //% weight=100
     //% blockGap=10
     //% color="#C814B8"
@@ -184,7 +184,7 @@ namespace ArmBit {
             return false;
 
     }
-    //% blockId=mbit_Rocker block="Rocker|value %value"
+    //% blockId=ArmBit_Rocker block="Rocker|value %value"
     //% weight=99
     //% blockGap=10
     //% color="#C814B8"
@@ -228,7 +228,7 @@ namespace ArmBit {
 
     }
 
-    //% blockId=mbit_Button block="Button|pin %pin|value %value"
+    //% blockId=ArmBit_Button block="Button|pin %pin|value %value"
     //% weight=98
     //% blockGap=10
     //% color="#C814B8"
