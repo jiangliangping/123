@@ -231,7 +231,7 @@ namespace ArmBit {
     //% blockId=ArmBit_aButton block="aButton|pin %pin|value %value"
     //% weight=98
     //% blockGap=10
-    //% color="#006400"
+    //% color="#C814B8"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=5
     export function aButton(pin: DigitalPin, value: enButton): boolean {
 
