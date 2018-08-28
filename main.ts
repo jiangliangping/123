@@ -46,27 +46,27 @@ namespace mbit_输入类 {
 		//% blockId=mbit_Push_botton block="Push_botton|value1 %value1|value %value"
     //% weight=100
     //% blockGap=10
-    //% color="#808080"
+    //% color="#C814B8"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=6
     export function Push_botton(pin: Push_Button, value: enRocker): boolean {
 				
 				switch (Push_Button) {
-					case red:
+					case Push_Button.red:
 						pins.setPull(DigitalPin.P13, PinPullMode.PullUp);
             let a = pins.digitalReadPin(DigitalPin.P13);
 						break;
 					
-					case green:
+					case Push_Button.green:
 						pins.setPull(DigitalPin.P14, PinPullMode.PullUp);
             let a = pins.digitalReadPin(DigitalPin.P14);
 						break;
 					
-					case blue:
+					case Push_Button.blue:
 						pins.setPull(DigitalPin.P15, PinPullMode.PullUp);
             let a = pins.digitalReadPin(DigitalPin.P15);
 						break;
 					
-					case yellow:
+					case Push_Button.yellow:
 						pins.setPull(DigitalPin.P16, PinPullMode.PullUp);
             let a = pins.digitalReadPin(DigitalPin.P16);
 						break;
