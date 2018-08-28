@@ -186,7 +186,7 @@ namespace mbit_输入类 {
     //% blockId=mbit_Rocker block="Rocker|value %value"
     //% weight=99
     //% blockGap=10
-    //% color="#808080"
+    //% color="#C814B8"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=6
     export function Rocker(value: enRocker): boolean {
 
@@ -230,7 +230,7 @@ namespace mbit_输入类 {
     //% blockId=mbit_Button block="Button|pin %pin|value %value"
     //% weight=98
     //% blockGap=10
-    //% color="#808080"
+    //% color="#C814B8"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=5
     export function Button(pin: DigitalPin, value: enButton): boolean {
 
