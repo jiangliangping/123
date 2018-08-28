@@ -60,7 +60,7 @@ namespace mbit_输入类 {
 
     }
     //% blockId=mbit_Rocker block="Rocker|VRX %pin1|VRY %pin2|SW %pin3|value %value"
-    //% weight=100
+    //% weight=99
     //% blockGap=10
     //% color="#808080"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=6
@@ -104,7 +104,7 @@ namespace mbit_输入类 {
     }
 
     //% blockId=mbit_Button block="Button|pin %pin|value %value"
-    //% weight=100
+    //% weight=98
     //% blockGap=10
     //% color="#808080"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=5
