@@ -369,7 +369,7 @@ namespace GHBit {
               break;
             }
         }
-        return 1;         
+        return temp;         
     }
     
     //% blockId=GHBit_RGB_Colorful block="RGB_Colorful|%value"
