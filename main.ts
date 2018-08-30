@@ -215,7 +215,7 @@ namespace GHBit {
     //% blockId=GHBit_RGB_Program block="RGB_Program"
     //% weight=99
     //% blockGap=10
-    //% color="#C814B8"
+    //% color="#640000"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
     export function RGB_Program(): neopixel.Strip {
          
