@@ -189,7 +189,7 @@ namespace GHBit {
         pins.setPull(DigitalPin.P10, PinPullMode.PullUp);
         let x = pins.analogReadPin(AnalogPin.P10);
 
-        if (x < 200) // 上
+        if (x < 500) // 上
         {
 
             return false;
