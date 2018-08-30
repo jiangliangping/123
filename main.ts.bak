@@ -184,7 +184,7 @@ namespace GHBit {
     //% blockGap=10
     //% color="#C814B8"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=6
-    export function Beam(value: enRocker): boolean {
+    export function Beam(): boolean {
 
         pins.setPull(DigitalPin.P10, PinPullMode.PullUp);
         let x = pins.analogReadPin(AnalogPin.P10);
