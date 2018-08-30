@@ -5,7 +5,6 @@ load dependency
 "GHBit": "file:../pxt-ghbit"
 */
 
-
 //% color="#C814B8" weight=20 icon="\uf11b"
 namespace GHBit {
 
