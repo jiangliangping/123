@@ -320,12 +320,12 @@ namespace GHBit {
 
     }
     
-    //% blockId=GHBit_Button1 block="Button1|num %num|value %value"
+    //% blockId=GHBit_Button block="Button1|num %num|value %value"
     //% weight=93
     //% blockGap=10
     //% color="#C814B8"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=5
-    export function Button1(num: enButton, value: enButtonState): boolean {
+    export function Button(num: enButton, value: enButtonState): boolean {
          var temp : boolean = false;
          switch (num) {
             case enButton.B1: {
