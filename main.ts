@@ -32,7 +32,7 @@ namespace GHBit {
     
      export enum Beamstate {
      	//% blockId="bright" block="白天"
-     	bright=1;
+     	bright = 1,
      	//% blockId="dark" block="黑夜"
      	dark
     }
