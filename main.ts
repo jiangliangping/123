@@ -200,22 +200,25 @@ namespace GHBit {
             if(value==Beamstate.bright){
             	return true;
             	}
-            else
+            else{
+            	
             	return false;
+                }
         }
         else
         {
         	 if(value==Beamstate.dark){
             	return true;
             	}
-            else
+            else{
             	return false;
+            }
         }
     }
     //% blockId=GHBit_RGB_Program block="RGB_Program"
     //% weight=99
     //% blockGap=10
-    //% color="#640000"
+    //% color="#C814B8"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
     export function RGB_Program(): neopixel.Strip {
          
