@@ -179,7 +179,29 @@ namespace GHBit {
      * *****************************************************************
      * @param index
      */   
+    //% blockId=GHBit_Beam block="Beam|value %value"
+    //% weight=100
+    //% blockGap=10
+    //% color="#C814B8"
+    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=6
+    export function Beam(): boolean {
 
+        pins.setPull(DigitalPin.P10, PinPullMode.PullUp);
+        let x = pins.analogReadPin(AnalogPin.P10);
+
+        if (x < 200) // 上
+        {
+
+            return false;
+
+        }
+        else
+        {
+        	 return true;
+        }
+            
+
+    }
     //% blockId=GHBit_RGB_Program block="RGB_Program"
     //% weight=99
     //% blockGap=10
