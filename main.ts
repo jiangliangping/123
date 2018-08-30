@@ -33,7 +33,7 @@ namespace GHBit {
      export enum Beamstate {
      	//% blockId="bright" block="白天"
      	bright=1;
-     	//% blockId="bright" block="黑夜"
+     	//% blockId="dark" block="黑夜"
      	dark
     }
     export enum enMusic {
@@ -185,6 +185,7 @@ namespace GHBit {
      * *****************************************************************
      * @param index
      */   
+     
     //% blockId=GHBit_Beam block="Beam|value %value"
     //% weight=100
     //% blockGap=10
@@ -194,7 +195,6 @@ namespace GHBit {
 
         pins.setPull(DigitalPin.P10, PinPullMode.PullUp);
         let x = pins.analogReadPin(AnalogPin.P10);
-
         if (x < 500) // 亮
         {
             if(value==Beamstate.bright){
@@ -205,8 +205,8 @@ namespace GHBit {
             	return false;
                 }
         }
-        else
-        {
+        else{
+        
         	 if(value==Beamstate.dark){
             	return true;
             	}
