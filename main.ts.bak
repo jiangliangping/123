@@ -289,24 +289,24 @@ namespace GHBit {
         let z = pins.digitalReadPin(DigitalPin.P8);
         let now_state = enRocker.Nostate;
 
-        if (x < 100) // 上
+        if (x < 200) // 上
         {
 
             now_state = enRocker.Up;
 
         }
-        else if (x > 700) //下
+        else if (x > 900) //下
         {
 
             now_state = enRocker.Down;
         }
         else  // 左右
         {
-            if (y < 100) //右
+            if (y < 200) //右
             {
                 now_state = enRocker.Right;
             }
-            else if (y > 700) //左
+            else if (y > 900) //左
             {
                 now_state = enRocker.Left;
             }
