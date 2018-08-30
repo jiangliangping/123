@@ -327,7 +327,6 @@ namespace GHBit {
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=5
     export function Button(num: enButton, value: enButtonState): boolean {
          var temp : boolean = false;
-        //temp=0;
          switch (num) {
             case enButton.B1: {
               pins.setPull(DigitalPin.P13, PinPullMode.PullUp);
@@ -370,7 +369,7 @@ namespace GHBit {
               break;
             }
         }
-        return 1;         
+        return temp;         
     }
     
     //% blockId=GHBit_RGB_Colorful block="RGB_Colorful|%value"
