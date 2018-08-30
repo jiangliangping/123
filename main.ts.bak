@@ -31,7 +31,9 @@ namespace GHBit {
     let yahStrip: neopixel.Strip;
     
      export enum Beamstata {
+     	//% blockId="bright" block="白天"
      	bright=1;
+     	//% blockId="bright" block="黑夜"
      	dark
     }
     export enum enMusic {

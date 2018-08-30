@@ -185,7 +185,7 @@ namespace GHBit {
      * *****************************************************************
      * @param index
      */   
-    //% blockId=GHBit_Beam block="Beam"
+    //% blockId=GHBit_Beam block="Beam|value %value"
     //% weight=100
     //% blockGap=10
     //% color="#C814B8"
