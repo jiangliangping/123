@@ -30,6 +30,12 @@ namespace GHBit {
     let initialized = false;
     let yahStrip: neopixel.Strip;
     
+     export enum Beamstata {
+     	//% blockId="bright" block="白天"
+     	bright=1;
+     	//% blockId="bright" block="黑夜"
+     	dark
+    }
     export enum enMusic {
 
         dadadum = 0,
@@ -184,20 +190,29 @@ namespace GHBit {
     //% blockGap=10
     //% color="#C814B8"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=6
-    export function Beam(): boolean {
+    export function Beam(value: Beamstata): boolean {
 
         pins.setPull(DigitalPin.P10, PinPullMode.PullUp);
         let x = pins.analogReadPin(AnalogPin.P10);
 
         if (x < 500) // 上
         {
-
-            return false;
+            if(value==Beamstata.bright){
+            	return true;
+            	}
+            else
+            	return false;
+            
+            
 
         }
         else
         {
-        	 return true;
+        	 if(value==Beamstata.dark){
+            	return true;
+            	}
+            else
+            	return false;
         }
             
 
