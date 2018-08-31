@@ -214,6 +214,7 @@ namespace GHBit {
                 break;
         }
         return true;
+        }
     }
     //% blockId=GHBit_Beam block="Beam|value %value"
     //% weight=100
