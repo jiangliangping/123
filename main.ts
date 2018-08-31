@@ -205,10 +205,11 @@ namespace GHBit {
         let y = pins.analogReadPin(AnalogPin.P3);
         switch (value) {
         	case Angle.Angle0: {
-        		return true;
+        		
             break;
           }
         }
+        return true;
     }
     //% blockId=GHBit_Beam block="Beam|value %value"
     //% weight=100
