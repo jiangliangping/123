@@ -272,6 +272,197 @@ namespace GHBit {
         setPwm(num + 8, 0, pwm);
 
     }
-        
+    //% blockId=GHBit_Ultrasonic_Handle block="ultrasonic return distance(cm)"
+    //% color="#C814B8"
+    //% weight=96
+    //% blockGap=10
+    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
+    export function Ultrasonic_Handle(): number {
+
+        // send pulse
+        pins.setPull(DigitalPin.P12, PinPullMode.PullNone);
+        pins.digitalWritePin(DigitalPin.P12, 0);
+        control.waitMicros(2);
+        pins.digitalWritePin(DigitalPin.P12, 1);
+        control.waitMicros(15);
+        pins.digitalWritePin(DigitalPin.P12, 0);
+
+        // read pulse
+        let d = pins.pulseIn(DigitalPin.P11, PulseValue.High, 43200);
+        return d / 58;
+    }
+    
+    //% blockId=GHBit_Min_Motor_Shake block="Min_Motor_Shake|value %value"
+    //% weight=95
+    //% blockGap=10
+    //% color="#C814B8"
+    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=12
+    export function Min_Motor_Shake(value: Motorshock): void {
+        switch (value) {
+            case Motorshock.OFF: {
+              setPwm(0, 0, 4095);
+              break;
+            }
+            case Motorshock.ON: {
+              setPwm(0, 0, 0);
+              break;
+            }
+        }               
+    }
+    
+    //% blockId=GHBit_Rocker block="Rocker|value %value"
+    //% weight=94
+    //% blockGap=10
+    //% color="#C814B8"
+    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=6
+    export function Rocker(value: enRocker): boolean {
+
+        pins.setPull(DigitalPin.P8, PinPullMode.PullUp);
+        let x = pins.analogReadPin(AnalogPin.P1);
+        let y = pins.analogReadPin(AnalogPin.P2);
+        let z = pins.digitalReadPin(DigitalPin.P8);
+        let now_state = enRocker.Nostate;
+
+        if (x < 200) // 上
+        {
+
+            now_state = enRocker.Up;
+
+        }
+        else if (x > 900) //下
+        {
+
+            now_state = enRocker.Down;
+        }
+        else  // 左右
+        {
+            if (y < 200) //右
+            {
+                now_state = enRocker.Right;
+            }
+            else if (y > 900) //左
+            {
+                now_state = enRocker.Left;
+            }
+        }
+        if (z == 0)
+            now_state = enRocker.Press;
+        if (now_state == value)
+            return true;
+        else
+            return false;
+
+    }
+    
+    //% blockId=GHBit_Button1 block="Button1|num %num|value %value"
+    //% weight=93
+    //% blockGap=10
+    //% color="#C814B8"
+    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=5
+    export function Button1(num: enButton, value: enButtonState): boolean {
+         //var temp : boolean = false;
+         let temp = false;
+         switch (num) {
+           case enButton.B1: {
+              pins.setPull(DigitalPin.P13, PinPullMode.PullUp);
+              if (pins.digitalReadPin(DigitalPin.P13) == value) {
+                temp = true;
+              } 
+              else {
+                temp = false;
+              }
+              break;
+            }
+            case enButton.B2: {
+              pins.setPull(DigitalPin.P14, PinPullMode.PullUp);
+              if (pins.digitalReadPin(DigitalPin.P14) == value) {
+                temp = true;
+              }
+              else {
+                temp = false;
+              }
+              break;
+            }
+            case enButton.B3: {
+              pins.setPull(DigitalPin.P15, PinPullMode.PullUp);
+              if (pins.digitalReadPin(DigitalPin.P15) == value) {
+                temp = true;
+              }
+              else {
+                temp = false;
+              }
+              break;
+            }
+            case enButton.B4: {
+              pins.setPull(DigitalPin.P16, PinPullMode.PullUp);
+              if (pins.digitalReadPin(DigitalPin.P16) == value) {
+                temp = true;
+              }
+              else {
+                temp = false;
+              }
+              break;
+            }
+        }
+        return temp;         
+    }
+    
+    //% blockId=GHBit_RGB_Colorful block="RGB_Colorful|%value"
+    //% weight=92
+    //% blockGap=10
+    //% color="#C814B8"
+    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
+    export function RGB_Colorful(value: enColor): void {
+        switch (value) {
+            case enColor.OFF: {
+              setPwm(15, 0, 0);
+              setPwm(14, 0, 0);
+              setPwm(13, 0, 0);
+              break;
+            }
+            case enColor.RED: {
+              setPwm(15, 0, 4095);
+              setPwm(14, 0, 0);
+              setPwm(13, 0, 0);
+              break;
+            }
+            case enColor.GREEN: {
+              setPwm(15, 0, 0);
+              setPwm(14, 0, 4095);
+              setPwm(13, 0, 0);
+              break;
+            }
+            case enColor.BLUE: {
+              setPwm(15, 0, 0);
+              setPwm(14, 0, 0);
+              setPwm(13, 0, 4095);
+              break;
+            }
+            case enColor.WHITE: {
+              setPwm(15, 0, 4095);
+              setPwm(14, 0, 4095);
+              setPwm(13, 0, 4095);
+              break;
+            }
+            case enColor.CYAN: {
+              setPwm(15, 0, 0);
+              setPwm(14, 0, 4095);
+              setPwm(13, 0, 4095);
+              break;
+            }
+            case enColor.PINKISH: {
+              setPwm(15, 0, 4095);
+              setPwm(14, 0, 0);
+              setPwm(13, 0, 4095);
+              break;
+            }
+            case enColor.YELLOW: {
+              setPwm(15, 0, 4095);
+              setPwm(14, 0, 4095);
+              setPwm(13, 0, 0);
+              break;
+            }
+        }
+    }    
 
 }
