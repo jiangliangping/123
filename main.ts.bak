@@ -31,14 +31,14 @@ namespace GHBit {
     let yahStrip: neopixel.Strip;
     
      export enum Angle {
-        //% blockId="Angle0" block="0"
-        Angle0 = 0,
-        //% blockId="Angle1" block="90"
-        Angle1,
-        //% blockId="Angle2" block="180"
-        Angle2,
-        //% blockId="Angle3" block="270"
-        Angle3
+        //% blockId="0" block="0"
+        0 = 0,
+        //% blockId="90" block="90"
+        90,
+        //% blockId="180" block="180"
+        180 = 0,
+        //% blockId="270" block="270"
+        270
     }
      export enum Beamstate {
      	//% blockId="bright" block="白天"
