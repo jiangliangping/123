@@ -5,7 +5,7 @@ load dependency
 "GHBit": "file:../pxt-ghbit"
 */
 
-//% color="#C814B8" weight=20 icon="\uf1d4"
+//% color="#C814B8" weight=20 icon="\uf11b"
 namespace GHBit {
 
     const PCA9685_ADD = 0x41;
@@ -411,7 +411,7 @@ namespace GHBit {
     //% blockId=GHBit_RGB_Colorful block="RGB_Colorful|%value"
     //% weight=92
     //% blockGap=10
-    //% color="#006400"
+    //% color="#C814B8"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
     export function RGB_Colorful(value: enColor): void {
         switch (value) {
