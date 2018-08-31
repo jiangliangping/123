@@ -1,5 +1,5 @@
 ﻿{
-   "GHBit.Beam|block": "光照|%value",
+  "GHBit.Beam|block": "光照|%value",
   "GHBit.RGB_Program|block": "手柄七彩流水灯",
   "GHBit.Music_Handle|block": "手柄音乐播放|%index",
   "GHBit.Servo_Handle|block": "手柄舵机|编号 %num|角度 %value",
