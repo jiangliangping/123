@@ -32,7 +32,7 @@ namespace GHBit {
     
      export enum Beamstate {
      	//% blockId="bright" block="白天"
-     	bright=1;
+     	bright = 1,
      	//% blockId="dark" block="黑夜"
      	dark
     }
@@ -367,7 +367,7 @@ namespace GHBit {
               pins.setPull(DigitalPin.P13, PinPullMode.PullUp);
               if (pins.digitalReadPin(DigitalPin.P13) == value) {
                 temp = true;
-              }
+              } 
               else {
                 temp = false;
               }
