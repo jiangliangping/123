@@ -205,11 +205,13 @@ namespace GHBit {
         let y = pins.analogReadPin(AnalogPin.P3);
         switch (value) {
         	case Angle.Angle0: {
-                if(y < 100){
+                if(y < 100)
+                {
                 	return true;
                 }
-                else{
-                	return true;
+                else
+               	{
+                	return false;
                 }	
             break;
           }
