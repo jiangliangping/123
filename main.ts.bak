@@ -195,7 +195,16 @@ namespace GHBit {
      * *****************************************************************
      * @param index
      */   
-    
+    //% blockId=GHBit_Rotate block="Rotate|value %value"
+    //% weight=101
+    //% blockGap=10
+    //% color="#C814B8"
+    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=6
+    export function Rotate(value: Angle): boolean {
+
+        let y = pins.analogReadPin(AnalogPin.P3);
+        return true;
+    }
     //% blockId=GHBit_Beam block="Beam|value %value"
     //% weight=100
     //% blockGap=10

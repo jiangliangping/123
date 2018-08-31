@@ -203,6 +203,16 @@ namespace GHBit {
     export function Rotate(value: Angle): boolean {
 
         let y = pins.analogReadPin(AnalogPin.P3);
+        switch (value) {
+        	case Angle.Angle0: {
+                if(y < 100){
+                return true;
+              }
+              else{
+                return false;	
+              }
+                break;
+        }
         return true;
     }
     //% blockId=GHBit_Beam block="Beam|value %value"
