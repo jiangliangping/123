@@ -30,6 +30,22 @@ namespace GHBit {
     let initialized = false;
     let yahStrip: neopixel.Strip;
     
+     export enum Angle {
+        //% blockId="0" block="0"
+        0 = 0,
+        //% blockId="90" block="90"
+        90,
+        //% blockId="180" block="180"
+        180 = 0,
+        //% blockId="270" block="270"
+        270
+    }
+     export enum Beamstate {
+     	//% blockId="bright" block="白天"
+     	bright = 1,
+     	//% blockId="dark" block="黑夜"
+     	dark
+    }
     export enum enMusic {
 
         dadadum = 0,
@@ -180,6 +196,35 @@ namespace GHBit {
      * @param index
      */   
 
+    //% blockId=GHBit_Beam block="Beam|value %value"
+    //% weight=100
+    //% blockGap=10
+    //% color="#C814B8"
+    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=6
+    export function Beam(value: Beamstate): boolean {
+
+        pins.setPull(DigitalPin.P10, PinPullMode.PullUp);
+        let x = pins.analogReadPin(AnalogPin.P10);
+        if (x < 500) // 亮
+        {
+            if(value==Beamstate.bright){
+            	return true;
+            	}
+            else{
+            	
+            	return false;
+                }
+        }
+        else{
+        
+        	 if(value==Beamstate.dark){
+            	return true;
+            	}
+            else{
+            	return false;
+            }
+        }
+    }
     //% blockId=GHBit_RGB_Program block="RGB_Program"
     //% weight=99
     //% blockGap=10
@@ -289,24 +334,24 @@ namespace GHBit {
         let z = pins.digitalReadPin(DigitalPin.P8);
         let now_state = enRocker.Nostate;
 
-        if (x < 100) // 上
+        if (x < 200) // 上
         {
 
             now_state = enRocker.Up;
 
         }
-        else if (x > 700) //下
+        else if (x > 900) //下
         {
 
             now_state = enRocker.Down;
         }
         else  // 左右
         {
-            if (y < 100) //右
+            if (y < 200) //右
             {
                 now_state = enRocker.Right;
             }
-            else if (y > 700) //左
+            else if (y > 900) //左
             {
                 now_state = enRocker.Left;
             }
