@@ -30,12 +30,6 @@ namespace GHBit {
     let initialized = false;
     let yahStrip: neopixel.Strip;
     
-     export enum Beamstate {
-     	//% blockId="bright" block="白天"
-     	bright = 1,
-     	//% blockId="dark" block="黑夜"
-     	dark
-    }
     export enum enMusic {
 
         dadadum = 0,
@@ -185,36 +179,7 @@ namespace GHBit {
      * *****************************************************************
      * @param index
      */   
-     
-    //% blockId=GHBit_Beam block="Beam|value %value"
-    //% weight=100
-    //% blockGap=10
-    //% color="#C814B8"
-    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=6
-    export function Beam(value: Beamstate): boolean {
 
-        pins.setPull(DigitalPin.P10, PinPullMode.PullUp);
-        let x = pins.analogReadPin(AnalogPin.P10);
-        if (x < 500) // 亮
-        {
-            if(value==Beamstate.bright){
-            	return true;
-            	}
-            else{
-            	
-            	return false;
-                }
-        }
-        else{
-        
-        	 if(value==Beamstate.dark){
-            	return true;
-            	}
-            else{
-            	return false;
-            }
-        }
-    }
     //% blockId=GHBit_RGB_Program block="RGB_Program"
     //% weight=99
     //% blockGap=10
@@ -272,6 +237,7 @@ namespace GHBit {
         setPwm(num + 8, 0, pwm);
 
     }
+        
     //% blockId=GHBit_Ultrasonic_Handle block="ultrasonic return distance(cm)"
     //% color="#C814B8"
     //% weight=96
@@ -323,24 +289,24 @@ namespace GHBit {
         let z = pins.digitalReadPin(DigitalPin.P8);
         let now_state = enRocker.Nostate;
 
-        if (x < 200) // 上
+        if (x < 100) // 上
         {
 
             now_state = enRocker.Up;
 
         }
-        else if (x > 900) //下
+        else if (x > 700) //下
         {
 
             now_state = enRocker.Down;
         }
         else  // 左右
         {
-            if (y < 200) //右
+            if (y < 100) //右
             {
                 now_state = enRocker.Right;
             }
-            else if (y > 900) //左
+            else if (y > 700) //左
             {
                 now_state = enRocker.Left;
             }
@@ -353,21 +319,19 @@ namespace GHBit {
             return false;
 
     }
-    
-    //% blockId=GHBit_Button1 block="Button1|num %num|value %value"
+    //% blockId=GHBit_Button block="Button|num %num|value %value"
     //% weight=93
     //% blockGap=10
     //% color="#C814B8"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=5
-    export function Button1(num: enButton, value: enButtonState): boolean {
-         //var temp : boolean = false;
+    export function Button(num: enButton, value: enButtonState): boolean {
          let temp = false;
          switch (num) {
-           case enButton.B1: {
+            case enButton.B1: {
               pins.setPull(DigitalPin.P13, PinPullMode.PullUp);
               if (pins.digitalReadPin(DigitalPin.P13) == value) {
                 temp = true;
-              } 
+              }
               else {
                 temp = false;
               }
@@ -406,7 +370,6 @@ namespace GHBit {
         }
         return temp;         
     }
-    
     //% blockId=GHBit_RGB_Colorful block="RGB_Colorful|%value"
     //% weight=92
     //% blockGap=10
@@ -463,6 +426,5 @@ namespace GHBit {
               break;
             }
         }
-    }    
-
+    }
 }
