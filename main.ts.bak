@@ -209,10 +209,7 @@ namespace GHBit {
                 {
                 	return true;
                 }
-                else
-               	{
-                	return false;
-                }	
+              
             break;
           }
         }
