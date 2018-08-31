@@ -363,7 +363,7 @@ namespace GHBit {
     export function Button1(num: enButton, value: enButtonState): boolean {
          var temp : boolean = false;
          switch (num) {
-          /* case enButton.B1: {
+           case enButton.B1: {
               pins.setPull(DigitalPin.P13, PinPullMode.PullUp);
               if (pins.digitalReadPin(DigitalPin.P13) == value) {
                 temp = true;
@@ -392,7 +392,7 @@ namespace GHBit {
                 temp = false;
               }
               break;
-            }*/
+            }
             case enButton.B4: {
               pins.setPull(DigitalPin.P16, PinPullMode.PullUp);
               if (pins.digitalReadPin(DigitalPin.P16) == value) {
@@ -401,11 +401,10 @@ namespace GHBit {
               else {
                 temp = false;
               }
-              return true;
               break;
             }
         }
-      //  return temp;         
+        return temp;         
     }
     
     //% blockId=GHBit_RGB_Colorful block="RGB_Colorful|%value"
