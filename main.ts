@@ -208,34 +208,34 @@ namespace GHBit {
                 if(y < 100){
                 return true;
               }
-                else{
+              else{
                 return false;	
               }
                 break;
             }
             case Angle.Angle1: {
-              if(y < 200 && y > 100){
+              if(y < 200 & & y > 100){
                 return true;
               }
-                else{
+              else{
                 return false;	
                }
                 break;
             }
             case Angle.Angle2: {
-              if(y < 300 && y > 200){
+              if(y < 300 & & y > 200){
                 return true;
               }
-                else{
+              else{
                 return false;	
               }
                 break;
             }
             case Angle.Angle3: {
-              if(y < 400 && y > 300){
+              if(y < 400 & & y > 300){
                 return true;
               }
-                else{
+              else{
                 return false;	
               }
                 break;
