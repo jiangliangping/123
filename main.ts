@@ -195,54 +195,7 @@ namespace GHBit {
      * *****************************************************************
      * @param index
      */   
-    //% blockId=GHBit_Rotate block="Rotate|value %value"
-    //% weight=101
-    //% blockGap=10
-    //% color="#C814B8"
-    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=6
-    export function Rotate(value: Angle): boolean {
-
-        let y = pins.analogReadPin(AnalogPin.P3);
-        switch (value) {
-            case Angle.Angle0: {
-                if(y < 100){
-                return true;
-              }
-              else{
-                return false;	
-              }
-                break;
-            }
-            case Angle.Angle1: {
-              if(y < 200 ){
-                return true;
-              }
-              else{
-                return false;	
-               }
-                break;
-            }
-            case Angle.Angle2: {
-              if(y < 300){
-                return true;
-              }
-              else{
-                return false;	
-              }
-                break;
-            }
-            case Angle.Angle3: {
-              if(y < 400){
-                return true;
-              }
-              else{
-                return false;	
-              }
-                break;
-            }
-        }
-
-    }
+    
     //% blockId=GHBit_Beam block="Beam|value %value"
     //% weight=100
     //% blockGap=10
