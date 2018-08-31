@@ -206,28 +206,28 @@ namespace GHBit {
         let a = false;
         switch (value) {
         	case Angle.Angle0: {
-        		if(y < 100)
+        		if(y < 300)
         	  	a = true;
         		else 
         			a = false;
         		 break;
           }
           case Angle.Angle1: {
-        		if(y < 350 && y > 100)
+        		if(y < 550 && y > 300)
         	  	a = true;
         		else 
         			a = false;
         		 break;
           }
           case Angle.Angle2: {
-        		if(y < 700 && y > 350)
+        		if(y < 800 && y > 550)
         	  	a = true;
         		else 
         			a = false;
         		 break;
           }
           case Angle.Angle3: {
-        		if(y > 700)
+        		if(y > 800)
         	  	a = true;
         		else 
         			a = false;
