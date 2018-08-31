@@ -401,7 +401,7 @@ namespace GHBit {
               else {
                 temp = false;
               }
-              return temp
+              return true;
               break;
             }
         }
