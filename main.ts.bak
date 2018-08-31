@@ -208,6 +208,7 @@ namespace GHBit {
                 
             return true;
             break;
+          }
         }
     }
     //% blockId=GHBit_Beam block="Beam|value %value"
