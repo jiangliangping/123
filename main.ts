@@ -30,6 +30,14 @@ namespace GHBit {
     let initialized = false;
     let yahStrip: neopixel.Strip;
     
+     export enum STepper {
+        //% blockId="Stepper" block="正传"
+        Stepper = 0,
+        //% blockId="Stepper0" block="反转"
+        Stepper0,
+        //% blockId="Stepper0" block="停止"
+        Stepper1,
+    }
      export enum Angle {
         //% blockId="Angle0" block="0"
         Angle0 = 0,
@@ -195,6 +203,47 @@ namespace GHBit {
      * *****************************************************************
      * @param index
      */
+    //% blockId=GHBit_Stepper Motor block="Stepper Motor|value %value"
+    //% weight=103
+    //% blockGap=10
+    //% color="#C814B8"
+    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=12
+    export function Stepper Motor(value: Stepper): void {
+        switch (value) {
+            case STepper.Stepper: {
+              setPwm(1, 0, 4095);
+              setPwm(2, 0, 4095);
+              setPwm(3, 0, 0);
+              setPwm(4, 0, 0);
+              control.waitMicros(5000);
+              setPwm(1, 0, 0 );
+              setPwm(2, 0, 4095);
+              setPwm(3, 0, 4095);
+              setPwm(4, 0, 0);
+              control.waitMicros(5000);
+              setPwm(1, 0, 0 );
+              setPwm(2, 0, 0);
+              setPwm(3, 0, 4095);
+              setPwm(4, 0, 4095);
+              control.waitMicros(5000);
+              setPwm(1, 0, 4095);
+              setPwm(2, 0, 0);
+              setPwm(3, 0, 0);
+              setPwm(4, 0, 4095);
+              control.waitMicros(5000);
+              break;
+            }
+            case STepper.Stepper0: {
+              setPwm(5, 0, 0);
+              setPwm(6, 0, 0);
+              break;
+            }
+            case STepper.Stepper1: {
+              setPwm(5, 0, 0);
+              setPwm(6, 0, 0);
+              break;
+        }               
+    }   
     //% blockId=GHBit_Min_Motor block="Min_Motor|value %value"
     //% weight=102
     //% blockGap=10
