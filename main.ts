@@ -194,7 +194,26 @@ namespace GHBit {
     /**
      * *****************************************************************
      * @param index
-     */   
+     */
+    //% blockId=GHBit_Min_Motor block="Min_Motor|value %value"
+    //% weight=102
+    //% blockGap=10
+    //% color="#C814B8"
+    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=12
+    export function Min_Motor(value: Motorshock): void {
+        switch (value) {
+            case Motorshock.ON: {
+              setPwm(5, 0, 4095);
+              setPwm(6, 0, 0);
+              break;
+            }
+            case Motorshock.OFF: {
+              setPwm(5, 0, 0);
+              setPwm(6, 0, 0);
+              break;
+            }
+        }               
+    }   
     //% blockId=GHBit_Rotate block="Rotate|value %value"
     //% weight=101
     //% blockGap=10

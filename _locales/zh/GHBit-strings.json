@@ -1,5 +1,6 @@
 {
 
+  "GHBit.Min_Motor|block": "风扇| %value",
   "GHBit.Rotate|block": "角度|%value",
   "GHBit.Beam|block": "光照|%value",
   "GHBit.RGB_Program|block": "手柄七彩流水灯",
