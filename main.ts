@@ -268,7 +268,7 @@ namespace GHBit {
     //% blockId=GHBit_Min_Motor block="Min_Motor|value %value"
     //% weight=102
     //% blockGap=10
-    //% color="#006400"
+    //% color="#C814B8"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=12
     export function Min_Motor(value: Motorshock): void {
         switch (value) {
