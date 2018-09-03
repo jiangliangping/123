@@ -210,65 +210,55 @@ namespace GHBit {
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=12
     export function Stepper_Motor(value: STepper): void {
         switch (value) {
-            case STepper.Stepper: {
-            	
+            case STepper.Stepper: {           	
               setPwm(1, 0, 4095);
               setPwm(2, 0, 0);
               setPwm(3, 0, 0);
               setPwm(4, 0, 0);
               control.waitMicros(50000);
-              control.waitMicros(50000);
-              
+              control.waitMicros(50000);              
               setPwm(1, 0, 4095);
               setPwm(2, 0, 0);
               setPwm(3, 0, 0);
               setPwm(4, 0, 0);
               control.waitMicros(50000);
-              control.waitMicros(50000);
-              
+              control.waitMicros(50000);             
               setPwm(1, 0, 4095);
               setPwm(2, 0, 4095);
               setPwm(3, 0, 0);
               setPwm(4, 0, 0);
               control.waitMicros(50000);
-              control.waitMicros(50000);
-              
+              control.waitMicros(50000);              
               setPwm(1, 0, 0);
               setPwm(2, 0, 4095);
               setPwm(3, 0, 0);
               setPwm(4, 0, 0);
               control.waitMicros(50000);
-              control.waitMicros(50000);
-              
+              control.waitMicros(50000);              
               setPwm(1, 0, 0);
               setPwm(2, 0, 4095);
               setPwm(3, 0, 4095);
               setPwm(4, 0, 0);
               control.waitMicros(50000);
-              control.waitMicros(50000);
-              
+              control.waitMicros(50000);             
               setPwm(1, 0, 0);
               setPwm(2, 0, 0);
               setPwm(3, 0, 4095);
               setPwm(4, 0, 0);
               control.waitMicros(50000);
-              control.waitMicros(50000);
-              
+              control.waitMicros(50000);             
               setPwm(1, 0, 0);
               setPwm(2, 0, 0);
               setPwm(3, 0, 4095);
               setPwm(4, 0, 4095);
               control.waitMicros(50000);
               control.waitMicros(50000);
-              
               setPwm(1, 0, 0);
               setPwm(2, 0, 0);
               setPwm(3, 0, 0);
               setPwm(4, 0, 4095);
               control.waitMicros(50000);
               control.waitMicros(50000);
-      
-            
               break;
             }
             case STepper.Stepper0: {
