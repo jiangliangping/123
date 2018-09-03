@@ -215,22 +215,12 @@ namespace GHBit {
               setPwm(2, 0, 0);
               setPwm(3, 0, 0);
               setPwm(4, 0, 0);
-              control.waitMicros(3000);           
-              setPwm(1, 0, 4095);
-              setPwm(2, 0, 4095);
-              setPwm(3, 0, 0);
-              setPwm(4, 0, 0);
-              control.waitMicros(3000);               
+              control.waitMicros(3000);                       
               setPwm(1, 0, 0);
               setPwm(2, 0, 4095);
               setPwm(3, 0, 0);
               setPwm(4, 0, 0);
-              control.waitMicros(3000);              
-              setPwm(1, 0, 0);
-              setPwm(2, 0, 4095);
-              setPwm(3, 0, 4095);
-              setPwm(4, 0, 0);
-              control.waitMicros(3000);             
+              control.waitMicros(3000);                         
               setPwm(1, 0, 0);
               setPwm(2, 0, 0);
               setPwm(3, 0, 4095);
@@ -238,29 +228,39 @@ namespace GHBit {
               control.waitMicros(3000);              
               setPwm(1, 0, 0);
               setPwm(2, 0, 0);
-              setPwm(3, 0, 4095);
-              setPwm(4, 0, 4095);
-              control.waitMicros(3000);  
-              setPwm(1, 0, 0);
-              setPwm(2, 0, 0);
               setPwm(3, 0, 0);
               setPwm(4, 0, 4095);
-              control.waitMicros(3000);  
-              setPwm(1, 0, 4095);
-              setPwm(2, 0, 0);
-              setPwm(3, 0, 0);
-              setPwm(4, 0, 4095);
-              control.waitMicros(3000);  
+              control.waitMicros(3000);   
               break;
             }
             case STepper.Stepper0: {
-              setPwm(5, 0, 0);
-              setPwm(6, 0, 0);
+              setPwm(1, 0, 0);
+              setPwm(2, 0, 0);
+              setPwm(3, 0, 0);
+              setPwm(4, 0, 4095);
+              control.waitMicros(3000);                       
+              setPwm(1, 0, 0);
+              setPwm(2, 0, 0);
+              setPwm(3, 0, 4095);
+              setPwm(4, 0, 0);
+              control.waitMicros(3000);                         
+              setPwm(1, 0, 0);
+              setPwm(2, 0, 4095);
+              setPwm(3, 0, 0);
+              setPwm(4, 0, 0);
+              control.waitMicros(3000);              
+              setPwm(1, 0, 4095);
+              setPwm(2, 0, 0);
+              setPwm(3, 0, 0);
+              setPwm(4, 0, 0);
+              control.waitMicros(3000);  
               break;
             }
             case STepper.Stepper1: {
-              setPwm(5, 0, 0);
-              setPwm(6, 0, 0);
+              setPwm(1, 0, 0);
+              setPwm(2, 0, 0);
+              setPwm(3, 0, 0);
+              setPwm(4, 0, 0);
               break;
             }               
         } 
