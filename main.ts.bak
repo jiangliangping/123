@@ -35,8 +35,8 @@ namespace GHBit {
         Stepper = 0,
         //% blockId="Stepper0" block="反转"
         Stepper0,
-        //% blockId="Stepper0" block="停止"
-        Stepper1,
+        //% blockId="Stepper1" block="停止"
+        Stepper1
     }
      export enum Angle {
         //% blockId="Angle0" block="0"
