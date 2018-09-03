@@ -216,6 +216,7 @@ namespace GHBit {
               setPwm(3, 0, 0);
               setPwm(4, 0, 0);
               control.waitMicros(5000);
+            /*  control.waitMicros(5000);
               control.waitMicros(5000);
               control.waitMicros(5000);
               control.waitMicros(5000);
@@ -225,14 +226,14 @@ namespace GHBit {
               control.waitMicros(5000);
               control.waitMicros(5000);
               control.waitMicros(5000);
-              control.waitMicros(5000);
-              control.waitMicros(5000);
+              control.waitMicros(5000);*/
               
               setPwm(1, 0, 0);
               setPwm(2, 0, 4095);
               setPwm(3, 0, 0);
               setPwm(4, 0, 0);
               control.waitMicros(5000);
+            /*  control.waitMicros(5000);
               control.waitMicros(5000);
               control.waitMicros(5000);
               control.waitMicros(5000);
@@ -242,14 +243,14 @@ namespace GHBit {
               control.waitMicros(5000);
               control.waitMicros(5000);
               control.waitMicros(5000);
-              control.waitMicros(5000);
-              control.waitMicros(5000);
+              control.waitMicros(5000);*/
               
               setPwm(1, 0, 0);
               setPwm(2, 0, 0);
               setPwm(3, 0, 4095);
               setPwm(4, 0, 0);
               control.waitMicros(5000);
+            /*  control.waitMicros(5000);
               control.waitMicros(5000);
               control.waitMicros(5000);
               control.waitMicros(5000);
@@ -259,14 +260,14 @@ namespace GHBit {
               control.waitMicros(5000);
               control.waitMicros(5000);
               control.waitMicros(5000);
-              control.waitMicros(5000);
-              control.waitMicros(5000);
+              control.waitMicros(5000);*/
               
               setPwm(1, 0, 0);
               setPwm(2, 0, 0);
               setPwm(3, 0, 0);
               setPwm(4, 0, 4095);
               control.waitMicros(5000);
+            /*  control.waitMicros(5000);
               control.waitMicros(5000);
               control.waitMicros(5000);
               control.waitMicros(5000);
@@ -276,8 +277,7 @@ namespace GHBit {
               control.waitMicros(5000);
               control.waitMicros(5000);
               control.waitMicros(5000);
-              control.waitMicros(5000);
-              control.waitMicros(5000);
+              control.waitMicros(5000);*/
               
               break;
             }
