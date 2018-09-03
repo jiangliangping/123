@@ -211,6 +211,7 @@ namespace GHBit {
     export function Stepper_Motor(value: STepper): void {
         switch (value) {
             case STepper.Stepper: {
+            	while(1){
               setPwm(1, 0, 4095);
               setPwm(2, 0, 0);
               setPwm(3, 0, 0);
@@ -238,7 +239,7 @@ namespace GHBit {
               setPwm(4, 0, 4095);
               control.waitMicros(50000);
               control.waitMicros(50000);
-              
+            }
               break;
             }
             case STepper.Stepper0: {
