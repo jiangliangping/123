@@ -245,7 +245,7 @@ namespace GHBit {
 
         pins.setPull(DigitalPin.P10, PinPullMode.PullUp);
         let x = pins.analogReadPin(AnalogPin.P10);
-        if (x < 500) // 亮
+        if (x < 300) // 亮
         {
             if(value==Beamstate.bright){
             	return true;
