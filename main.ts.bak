@@ -242,8 +242,9 @@ namespace GHBit {
               setPwm(5, 0, 0);
               setPwm(6, 0, 0);
               break;
-        }               
-    }   
+            }               
+        } 
+    }  
     //% blockId=GHBit_Min_Motor block="Min_Motor|value %value"
     //% weight=102
     //% blockGap=10
