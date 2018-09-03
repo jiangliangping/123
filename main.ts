@@ -216,8 +216,7 @@ namespace GHBit {
               setPwm(3, 0, 0);
               setPwm(4, 0, 0);
               control.waitMicros(50000);
-              control.waitMicros(50000);
-              control.waitMicros(50000);
+
 
               
               setPwm(1, 0, 0);
@@ -225,8 +224,7 @@ namespace GHBit {
               setPwm(3, 0, 0);
               setPwm(4, 0, 0);
               control.waitMicros(50000);
-              control.waitMicros(50000);
-              control.waitMicros(50000);
+
 
               
               setPwm(1, 0, 0);
@@ -234,8 +232,7 @@ namespace GHBit {
               setPwm(3, 0, 4095);
               setPwm(4, 0, 0);
               control.waitMicros(50000);
-              control.waitMicros(50000);
-              control.waitMicros(50000);
+
 
               
               setPwm(1, 0, 0);
@@ -243,8 +240,7 @@ namespace GHBit {
               setPwm(3, 0, 0);
               setPwm(4, 0, 4095);
               control.waitMicros(50000);
-              control.waitMicros(50000);
-              control.waitMicros(50000);
+
 
               
               break;
