@@ -208,7 +208,7 @@ namespace GHBit {
     //% blockGap=10
     //% color="#C814B8"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=12
-    export function Stepper Motor(value: Stepper): void {
+    export function Stepper Motor(value: STepper): void {
         switch (value) {
             case STepper.Stepper: {
               setPwm(1, 0, 4095);
@@ -247,7 +247,7 @@ namespace GHBit {
     //% blockId=GHBit_Min_Motor block="Min_Motor|value %value"
     //% weight=102
     //% blockGap=10
-    //% color="#C814B8"
+    //% color="#006400"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=12
     export function Min_Motor(value: Motorshock): void {
         switch (value) {
