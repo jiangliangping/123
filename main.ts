@@ -203,6 +203,17 @@ namespace GHBit {
      * *****************************************************************
      * @param index
      */
+    //% blockId=GHBit_RGB_Clean block="RGB_Clean"
+    //% weight=104
+    //% blockGap=10
+    //% color="#C814B8"
+    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
+    export function RGB_Clean(): void {
+        pins.digitalWritePin(DigitalPin.P4,0);
+        GHBit.RGB_Program().clear();
+        GHBit.RGB_Program().show();
+    }
+
     //% blockId=GHBit_Stepper_Motor block="Stepper_Motor|value %value"
     //% weight=103
     //% blockGap=10
