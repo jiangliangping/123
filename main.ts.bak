@@ -203,7 +203,7 @@ namespace GHBit {
      * *****************************************************************
      * @param index
      */
-        //% blockId=GHBit_RGB_Colorful1 block="RGB_Colorful1|"
+    //% blockId=GHBit_RGB_Colorful1 block="RGB_Colorful1"
     //% weight=104
     //% blockGap=10
     //% color="#C814B8"
