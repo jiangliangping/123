@@ -1,6 +1,5 @@
 {
 
-  "GHBit.RGB_RGB_Clean|block": "关闭手柄七彩灯"
   "GHBit.Stepper_Motor|block": "步进电机| %value",
   "GHBit.Min_Motor|block": "风扇| %value",
   "GHBit.Rotate|block": "角度|%value",
