@@ -209,7 +209,7 @@ namespace GHBit {
     //% color="#C814B8"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
     export function RGB_Clean(): void {
-        pins.digitalWritePin(DigitalPin.P4,0);
+        pins.digitalWritePin(DigitalPin.P4, 0);
         GHBit.RGB_Program().clear();
         GHBit.RGB_Program().show();
     }
