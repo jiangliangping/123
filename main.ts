@@ -209,7 +209,9 @@ namespace GHBit {
     //% color="#C814B8"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=12
     export function Step(): void {
-        setPwm(0, 0, 0);
+        pins.digitalWritePin(DigitalPin.P4, 0);
+        GHBit.RGB_Program().clear();
+        GHBit.RGB_Program().show();
     }  
     //% blockId=GHBit_Stepper_Motor block="Stepper_Motor|value %value"
     //% weight=103

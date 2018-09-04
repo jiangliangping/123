@@ -203,6 +203,14 @@ namespace GHBit {
      * *****************************************************************
      * @param index
      */
+     //% blockId=GHBit_Step block="Step"
+    //% weight=104
+    //% blockGap=10
+    //% color="#C814B8"
+    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=12
+    export function Step(): void {
+        setPwm(0, 0, 0);
+    }  
     //% blockId=GHBit_Stepper_Motor block="Stepper_Motor|value %value"
     //% weight=103
     //% blockGap=10
