@@ -211,7 +211,8 @@ namespace GHBit {
     export function RGB_Clean(): void {
        // pins.digitalWritePin(DigitalPin.P4, 0);
         //GHBit.RGB_Program().clear();
-        GHBit.RGB_Program().show();
+        //GHBit.RGB_Program().show();
+        pins.digitalWritePin(DigitalPin.P12, 0);
     }
 
     //% blockId=GHBit_Stepper_Motor block="Stepper_Motor|value %value"

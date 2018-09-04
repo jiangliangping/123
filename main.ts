@@ -203,15 +203,13 @@ namespace GHBit {
      * *****************************************************************
      * @param index
      */
-    //% blockId=GHBit_RGB_Clean block="RGB_Clean"
+    //% blockId=GHBit_RGB_clean block="RGB_clean"
     //% weight=104
     //% blockGap=10
     //% color="#C814B8"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
-    export function RGB_Clean(): void {
-       // pins.digitalWritePin(DigitalPin.P4, 0);
-        //GHBit.RGB_Program().clear();
-        //GHBit.RGB_Program().show();
+    export function RGB_clean(): void {
+       
         pins.digitalWritePin(DigitalPin.P12, 0);
     }
 
