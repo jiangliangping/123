@@ -210,7 +210,7 @@ namespace GHBit {
     //% color="#C814B8"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
     export function RGB_Colorful1(): void {
-        pins.digitalWritePin(DigitalPin.P4, 0);
+       // pins.digitalWritePin(DigitalPin.P4, 0);
     }
 
     //% blockId=GHBit_Stepper_Motor block="Stepper_Motor|value %value"
