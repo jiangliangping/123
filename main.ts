@@ -203,7 +203,6 @@ namespace GHBit {
      * *****************************************************************
      * @param index
      */
-     
     //% blockId=GHBit_Stepper_Motor block="Stepper_Motor|value %value"
     //% weight=103
     //% blockGap=10
