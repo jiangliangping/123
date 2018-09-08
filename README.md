@@ -1,6 +1,6 @@
-# HelloBot
+# GHBit
 
-Extension for Yahboom HelloBot
+Extension for Yahboom GHBit
 
 ## License
 

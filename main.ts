@@ -30,15 +30,15 @@ namespace GHBit {
     let initialized = false;
     let yahStrip: neopixel.Strip;
     
-     export enum STepper {
-        //% blockId="Stepper" block="正传"
+    export enum STepper {
+        //% blockId="Stepper" block="正转"
         Stepper = 0,
         //% blockId="Stepper0" block="反转"
         Stepper0,
         //% blockId="Stepper1" block="停止"
         Stepper1
     }
-     export enum Angle {
+    export enum Angle {
         //% blockId="Angle0" block="0"
         Angle0 = 0,
         //% blockId="Angle1" block="90"
@@ -48,7 +48,7 @@ namespace GHBit {
         //% blockId="Angle3" block="270"
         Angle3
     }
-     export enum Beamstate {
+    export enum Beamstate {
      	//% blockId="bright" block="白天"
      	bright = 1,
      	//% blockId="dark" block="黑夜"
@@ -203,18 +203,293 @@ namespace GHBit {
      * *****************************************************************
      * @param index
      */
-     //% blockId=GHBit_Step block="Step"
-    //% weight=104
+    
+    //% blockId=GHBit_RGB_Program block="RGB_Program"
+    //% weight=99
+    //% blockGap=10
+    //% color="#C814B8"
+    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
+    export function RGB_Program(): neopixel.Strip {
+         
+        if (!yahStrip) {
+            yahStrip = neopixel.create(DigitalPin.P4, 4, NeoPixelMode.RGB);
+        }
+        return yahStrip;  
+    }  
+       
+    //% blockId=GHBit_RGB_Program_Close block="RGB_Program_Close"
+    //% weight=98
     //% blockGap=10
     //% color="#C814B8"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=12
-    export function Step(): void {
+    export function RGB_Program_Close(): void {
         pins.digitalWritePin(DigitalPin.P4, 0);
         GHBit.RGB_Program().clear();
         GHBit.RGB_Program().show();
-    }  
+    }
+    
+    //% blockId=GHBit_Min_Motor_Shake block="Min_Motor_Shake|value %value"
+    //% weight=97
+    //% blockGap=10
+    //% color="#C814B8"
+    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=12
+    export function Min_Motor_Shake(value: Motorshock): void {
+        switch (value) {
+            case Motorshock.ON: {
+              setPwm(0, 0, 4095);
+              break;
+            }
+            case Motorshock.OFF: {
+              setPwm(0, 0, 0);
+              break;
+            }
+        }               
+    }
+    
+    //% blockId=GHBit_Rocker block="Rocker|value %value"
+    //% weight=96
+    //% blockGap=10
+    //% color="#C814B8"
+    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=6
+    export function Rocker(value: enRocker): boolean {
+
+        pins.setPull(DigitalPin.P8, PinPullMode.PullUp);
+        let x = pins.analogReadPin(AnalogPin.P1);
+        let y = pins.analogReadPin(AnalogPin.P2);
+        let z = pins.digitalReadPin(DigitalPin.P8);
+        let now_state = enRocker.Nostate;
+
+        if (x < 200) // 上
+        {
+
+            now_state = enRocker.Up;
+
+        }
+        else if (x > 900) //下
+        {
+
+            now_state = enRocker.Down;
+        }
+        else  // 左右
+        {
+            if (y < 200) //右
+            {
+                now_state = enRocker.Right;
+            }
+            else if (y > 900) //左
+            {
+                now_state = enRocker.Left;
+            }
+        }
+        if (z == 0)
+            now_state = enRocker.Press;
+        if (now_state == value)
+            return true;
+        else
+            return false;
+
+    }
+    
+    //% blockId=GHBit_Button block="Button|num %num|value %value"
+    //% weight=95
+    //% blockGap=10
+    //% color="#C814B8"
+    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=5
+    export function Button(num: enButton, value: enButtonState): boolean {
+         let temp = false;
+         switch (num) {
+            case enButton.B1: {
+              pins.setPull(DigitalPin.P13, PinPullMode.PullUp);
+              if (pins.digitalReadPin(DigitalPin.P13) == value) {
+                temp = true;
+              }
+              else {
+                temp = false;
+              }
+              break;
+            }
+            case enButton.B2: {
+              pins.setPull(DigitalPin.P14, PinPullMode.PullUp);
+              if (pins.digitalReadPin(DigitalPin.P14) == value) {
+                temp = true;
+              }
+              else {
+                temp = false;
+              }
+              break;
+            }
+            case enButton.B3: {
+              pins.setPull(DigitalPin.P15, PinPullMode.PullUp);
+              if (pins.digitalReadPin(DigitalPin.P15) == value) {
+                temp = true;
+              }
+              else {
+                temp = false;
+              }
+              break;
+            }
+            case enButton.B4: {
+              pins.setPull(DigitalPin.P16, PinPullMode.PullUp);
+              if (pins.digitalReadPin(DigitalPin.P16) == value) {
+                temp = true;
+              }
+              else {
+                temp = false;
+              }
+              break;
+            }
+        }
+        return temp;         
+    }
+    
+    //% blockId==onKey block="Key %pin |Press"
+    //% weight=94
+    //% blockGap=10
+    //% color="#C814B8"
+    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=5
+    export function onKey(pin: enButton, body: Action): void {
+        let Pin = 0;
+        pins.setPull(DigitalPin.P13, PinPullMode.PullUp);
+        pins.setPull(DigitalPin.P14, PinPullMode.PullUp);
+        pins.setPull(DigitalPin.P15, PinPullMode.PullUp);
+        pins.setPull(DigitalPin.P16, PinPullMode.PullUp); 
+        if (pin == enButton.B1) {
+            Pin = DigitalPin.P13;
+        } else if (pin == enButton.B2) {
+            Pin = DigitalPin.P14;
+        } else if (pin == enButton.B3) {
+            Pin = DigitalPin.P15;
+        } else if (pin == enButton.B4) {
+            Pin = DigitalPin.P16;
+        }
+        pins.onPulsed(Pin, PulseValue.Low, body);
+    }
+    
+    //% blockId=GHBit_Music_Handle block="Music_Handle|%index"
+    //% weight=92
+    //% blockGap=10
+    //% color="#C814B8"
+    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
+    export function Music_Handle(index: enMusic): void {
+        switch (index) {
+            case enMusic.dadadum: music.beginMelody(music.builtInMelody(Melodies.Dadadadum), MelodyOptions.Once); break;
+            case enMusic.birthday: music.beginMelody(music.builtInMelody(Melodies.Birthday), MelodyOptions.Once); break;
+            case enMusic.entertainer: music.beginMelody(music.builtInMelody(Melodies.Entertainer), MelodyOptions.Once); break;
+            case enMusic.prelude: music.beginMelody(music.builtInMelody(Melodies.Prelude), MelodyOptions.Once); break;
+            case enMusic.ode: music.beginMelody(music.builtInMelody(Melodies.Ode), MelodyOptions.Once); break;
+            case enMusic.nyan: music.beginMelody(music.builtInMelody(Melodies.Nyan), MelodyOptions.Once); break;
+            case enMusic.ringtone: music.beginMelody(music.builtInMelody(Melodies.Ringtone), MelodyOptions.Once); break;
+            case enMusic.funk: music.beginMelody(music.builtInMelody(Melodies.Funk), MelodyOptions.Once); break;
+            case enMusic.blues: music.beginMelody(music.builtInMelody(Melodies.Blues), MelodyOptions.Once); break;
+            case enMusic.wedding: music.beginMelody(music.builtInMelody(Melodies.Wedding), MelodyOptions.Once); break;
+            case enMusic.funereal: music.beginMelody(music.builtInMelody(Melodies.Funeral), MelodyOptions.Once); break;
+            case enMusic.punchline: music.beginMelody(music.builtInMelody(Melodies.Punchline), MelodyOptions.Once); break;
+            case enMusic.baddy: music.beginMelody(music.builtInMelody(Melodies.Baddy), MelodyOptions.Once); break;
+            case enMusic.chase: music.beginMelody(music.builtInMelody(Melodies.Chase), MelodyOptions.Once); break;
+            case enMusic.ba_ding: music.beginMelody(music.builtInMelody(Melodies.BaDing), MelodyOptions.Once); break;
+            case enMusic.wawawawaa: music.beginMelody(music.builtInMelody(Melodies.Wawawawaa), MelodyOptions.Once); break;
+            case enMusic.jump_up: music.beginMelody(music.builtInMelody(Melodies.JumpUp), MelodyOptions.Once); break;
+            case enMusic.jump_down: music.beginMelody(music.builtInMelody(Melodies.JumpDown), MelodyOptions.Once); break;
+            case enMusic.power_up: music.beginMelody(music.builtInMelody(Melodies.PowerUp), MelodyOptions.Once); break;
+            case enMusic.power_down: music.beginMelody(music.builtInMelody(Melodies.PowerDown), MelodyOptions.Once); break;
+        }
+    }
+    
+    //% blockId=GHBit_Servo_Handle block="Servo_Handle|num %num|value %value"
+    //% weight=91
+    //% blockGap=10
+    //% color="#C814B8"
+    //% num.min=1 num.max=4 value.min=0 value.max=180
+    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=9
+    export function Servo_Handle(num: enServo, value: number): void {
+
+        // 50hz: 20,000 us
+        let us = (value * 1800 / 180 + 600); // 0.6 ~ 2.4
+        let pwm = us * 4096 / 20000;
+        setPwm(num + 8, 0, pwm);
+
+    }
+        
+    //% blockId=GHBit_Ultrasonic_Handle block="ultrasonic return distance(cm)"
+    //% color="#C814B8"
+    //% weight=90
+    //% blockGap=10
+    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
+    export function Ultrasonic_Handle(): number {
+
+        // send pulse
+        pins.setPull(DigitalPin.P12, PinPullMode.PullNone);
+        pins.digitalWritePin(DigitalPin.P12, 0);
+        control.waitMicros(2);
+        pins.digitalWritePin(DigitalPin.P12, 1);
+        control.waitMicros(15);
+        pins.digitalWritePin(DigitalPin.P12, 0);
+
+        // read pulse
+        let d = pins.pulseIn(DigitalPin.P11, PulseValue.High, 43200);
+        return d / 40;
+    }
+
+    //% blockId=GHBit_RGB_Colorful block="RGB_Colorful|%value"
+    //% weight=89
+    //% blockGap=10
+    //% color="#C814B8"
+    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
+    export function RGB_Colorful(value: enColor): void {
+        switch (value) {
+            case enColor.OFF: {
+              setPwm(15, 0, 0);
+              setPwm(14, 0, 0);
+              setPwm(13, 0, 0);
+              break;
+            }
+            case enColor.RED: {
+              setPwm(15, 0, 4095);
+              setPwm(14, 0, 0);
+              setPwm(13, 0, 0);
+              break;
+            }
+            case enColor.GREEN: {
+              setPwm(15, 0, 0);
+              setPwm(14, 0, 4095);
+              setPwm(13, 0, 0);
+              break;
+            }
+            case enColor.BLUE: {
+              setPwm(15, 0, 0);
+              setPwm(14, 0, 0);
+              setPwm(13, 0, 4095);
+              break;
+            }
+            case enColor.WHITE: {
+              setPwm(15, 0, 4095);
+              setPwm(14, 0, 4095);
+              setPwm(13, 0, 4095);
+              break;
+            }
+            case enColor.CYAN: {
+              setPwm(15, 0, 0);
+              setPwm(14, 0, 4095);
+              setPwm(13, 0, 4095);
+              break;
+            }
+            case enColor.PINKISH: {
+              setPwm(15, 0, 4095);
+              setPwm(14, 0, 0);
+              setPwm(13, 0, 4095);
+              break;
+            }
+            case enColor.YELLOW: {
+              setPwm(15, 0, 4095);
+              setPwm(14, 0, 4095);
+              setPwm(13, 0, 0);
+              break;
+            }
+        }
+    }
+    
     //% blockId=GHBit_Stepper_Motor block="Stepper_Motor|value %value"
-    //% weight=103
+    //% weight=88
     //% blockGap=10
     //% color="#C814B8"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=12
@@ -276,7 +551,7 @@ namespace GHBit {
         } 
     }  
     //% blockId=GHBit_Min_Motor block="Min_Motor|value %value"
-    //% weight=102
+    //% weight=87
     //% blockGap=10
     //% color="#C814B8"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=12
@@ -295,7 +570,7 @@ namespace GHBit {
         }               
     }   
     //% blockId=GHBit_Rotate block="Rotate|value %value"
-    //% weight=101
+    //% weight=86
     //% blockGap=10
     //% color="#C814B8"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=6
@@ -336,7 +611,7 @@ namespace GHBit {
         return a;
     }
     //% blockId=GHBit_Beam block="Beam|value %value"
-    //% weight=100
+    //% weight=85
     //% blockGap=10
     //% color="#C814B8"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=6
@@ -364,251 +639,6 @@ namespace GHBit {
             }
         }
     }
-    //% blockId=GHBit_RGB_Program block="RGB_Program"
-    //% weight=99
-    //% blockGap=10
-    //% color="#C814B8"
-    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
-    export function RGB_Program(): neopixel.Strip {
-         
-        if (!yahStrip) {
-            yahStrip = neopixel.create(DigitalPin.P4, 4, NeoPixelMode.RGB);
-        }
-        return yahStrip;  
-    }  
     
-    //% blockId=GHBit_Music_Handle block="Music_Handle|%index"
-    //% weight=98
-    //% blockGap=10
-    //% color="#C814B8"
-    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
-    export function Music_Handle(index: enMusic): void {
-        switch (index) {
-            case enMusic.dadadum: music.beginMelody(music.builtInMelody(Melodies.Dadadadum), MelodyOptions.Once); break;
-            case enMusic.birthday: music.beginMelody(music.builtInMelody(Melodies.Birthday), MelodyOptions.Once); break;
-            case enMusic.entertainer: music.beginMelody(music.builtInMelody(Melodies.Entertainer), MelodyOptions.Once); break;
-            case enMusic.prelude: music.beginMelody(music.builtInMelody(Melodies.Prelude), MelodyOptions.Once); break;
-            case enMusic.ode: music.beginMelody(music.builtInMelody(Melodies.Ode), MelodyOptions.Once); break;
-            case enMusic.nyan: music.beginMelody(music.builtInMelody(Melodies.Nyan), MelodyOptions.Once); break;
-            case enMusic.ringtone: music.beginMelody(music.builtInMelody(Melodies.Ringtone), MelodyOptions.Once); break;
-            case enMusic.funk: music.beginMelody(music.builtInMelody(Melodies.Funk), MelodyOptions.Once); break;
-            case enMusic.blues: music.beginMelody(music.builtInMelody(Melodies.Blues), MelodyOptions.Once); break;
-            case enMusic.wedding: music.beginMelody(music.builtInMelody(Melodies.Wedding), MelodyOptions.Once); break;
-            case enMusic.funereal: music.beginMelody(music.builtInMelody(Melodies.Funeral), MelodyOptions.Once); break;
-            case enMusic.punchline: music.beginMelody(music.builtInMelody(Melodies.Punchline), MelodyOptions.Once); break;
-            case enMusic.baddy: music.beginMelody(music.builtInMelody(Melodies.Baddy), MelodyOptions.Once); break;
-            case enMusic.chase: music.beginMelody(music.builtInMelody(Melodies.Chase), MelodyOptions.Once); break;
-            case enMusic.ba_ding: music.beginMelody(music.builtInMelody(Melodies.BaDing), MelodyOptions.Once); break;
-            case enMusic.wawawawaa: music.beginMelody(music.builtInMelody(Melodies.Wawawawaa), MelodyOptions.Once); break;
-            case enMusic.jump_up: music.beginMelody(music.builtInMelody(Melodies.JumpUp), MelodyOptions.Once); break;
-            case enMusic.jump_down: music.beginMelody(music.builtInMelody(Melodies.JumpDown), MelodyOptions.Once); break;
-            case enMusic.power_up: music.beginMelody(music.builtInMelody(Melodies.PowerUp), MelodyOptions.Once); break;
-            case enMusic.power_down: music.beginMelody(music.builtInMelody(Melodies.PowerDown), MelodyOptions.Once); break;
-        }
-    }
     
-    //% blockId=GHBit_Servo_Handle block="Servo_Handle|num %num|value %value"
-    //% weight=97
-    //% blockGap=10
-    //% color="#C814B8"
-    //% num.min=1 num.max=4 value.min=0 value.max=180
-    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=9
-    export function Servo_Handle(num: enServo, value: number): void {
-
-        // 50hz: 20,000 us
-        let us = (value * 1800 / 180 + 600); // 0.6 ~ 2.4
-        let pwm = us * 4096 / 20000;
-        setPwm(num + 8, 0, pwm);
-
-    }
-        
-    //% blockId=GHBit_Ultrasonic_Handle block="ultrasonic return distance(cm)"
-    //% color="#C814B8"
-    //% weight=96
-    //% blockGap=10
-    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
-    export function Ultrasonic_Handle(): number {
-
-        // send pulse
-        pins.setPull(DigitalPin.P12, PinPullMode.PullNone);
-        pins.digitalWritePin(DigitalPin.P12, 0);
-        control.waitMicros(2);
-        pins.digitalWritePin(DigitalPin.P12, 1);
-        control.waitMicros(15);
-        pins.digitalWritePin(DigitalPin.P12, 0);
-
-        // read pulse
-        let d = pins.pulseIn(DigitalPin.P11, PulseValue.High, 43200);
-        return d / 58;
-    }
-    
-    //% blockId=GHBit_Min_Motor_Shake block="Min_Motor_Shake|value %value"
-    //% weight=95
-    //% blockGap=10
-    //% color="#C814B8"
-    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=12
-    export function Min_Motor_Shake(value: Motorshock): void {
-        switch (value) {
-            case Motorshock.OFF: {
-              setPwm(0, 0, 4095);
-              break;
-            }
-            case Motorshock.ON: {
-              setPwm(0, 0, 0);
-              break;
-            }
-        }               
-    }
-    
-    //% blockId=GHBit_Rocker block="Rocker|value %value"
-    //% weight=94
-    //% blockGap=10
-    //% color="#C814B8"
-    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=6
-    export function Rocker(value: enRocker): boolean {
-
-        pins.setPull(DigitalPin.P8, PinPullMode.PullUp);
-        let x = pins.analogReadPin(AnalogPin.P1);
-        let y = pins.analogReadPin(AnalogPin.P2);
-        let z = pins.digitalReadPin(DigitalPin.P8);
-        let now_state = enRocker.Nostate;
-
-        if (x < 200) // 上
-        {
-
-            now_state = enRocker.Up;
-
-        }
-        else if (x > 900) //下
-        {
-
-            now_state = enRocker.Down;
-        }
-        else  // 左右
-        {
-            if (y < 200) //右
-            {
-                now_state = enRocker.Right;
-            }
-            else if (y > 900) //左
-            {
-                now_state = enRocker.Left;
-            }
-        }
-        if (z == 0)
-            now_state = enRocker.Press;
-        if (now_state == value)
-            return true;
-        else
-            return false;
-
-    }
-    //% blockId=GHBit_Button block="Button|num %num|value %value"
-    //% weight=93
-    //% blockGap=10
-    //% color="#C814B8"
-    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=5
-    export function Button(num: enButton, value: enButtonState): boolean {
-         let temp = false;
-         switch (num) {
-            case enButton.B1: {
-              pins.setPull(DigitalPin.P13, PinPullMode.PullUp);
-              if (pins.digitalReadPin(DigitalPin.P13) == value) {
-                temp = true;
-              }
-              else {
-                temp = false;
-              }
-              break;
-            }
-            case enButton.B2: {
-              pins.setPull(DigitalPin.P14, PinPullMode.PullUp);
-              if (pins.digitalReadPin(DigitalPin.P14) == value) {
-                temp = true;
-              }
-              else {
-                temp = false;
-              }
-              break;
-            }
-            case enButton.B3: {
-              pins.setPull(DigitalPin.P15, PinPullMode.PullUp);
-              if (pins.digitalReadPin(DigitalPin.P15) == value) {
-                temp = true;
-              }
-              else {
-                temp = false;
-              }
-              break;
-            }
-            case enButton.B4: {
-              pins.setPull(DigitalPin.P16, PinPullMode.PullUp);
-              if (pins.digitalReadPin(DigitalPin.P16) == value) {
-                temp = true;
-              }
-              else {
-                temp = false;
-              }
-              break;
-            }
-        }
-        return temp;         
-    }
-    //% blockId=GHBit_RGB_Colorful block="RGB_Colorful|%value"
-    //% weight=92
-    //% blockGap=10
-    //% color="#C814B8"
-    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
-    export function RGB_Colorful(value: enColor): void {
-        switch (value) {
-            case enColor.OFF: {
-              setPwm(15, 0, 0);
-              setPwm(14, 0, 0);
-              setPwm(13, 0, 0);
-              break;
-            }
-            case enColor.RED: {
-              setPwm(15, 0, 4095);
-              setPwm(14, 0, 0);
-              setPwm(13, 0, 0);
-              break;
-            }
-            case enColor.GREEN: {
-              setPwm(15, 0, 0);
-              setPwm(14, 0, 4095);
-              setPwm(13, 0, 0);
-              break;
-            }
-            case enColor.BLUE: {
-              setPwm(15, 0, 0);
-              setPwm(14, 0, 0);
-              setPwm(13, 0, 4095);
-              break;
-            }
-            case enColor.WHITE: {
-              setPwm(15, 0, 4095);
-              setPwm(14, 0, 4095);
-              setPwm(13, 0, 4095);
-              break;
-            }
-            case enColor.CYAN: {
-              setPwm(15, 0, 0);
-              setPwm(14, 0, 4095);
-              setPwm(13, 0, 4095);
-              break;
-            }
-            case enColor.PINKISH: {
-              setPwm(15, 0, 4095);
-              setPwm(14, 0, 0);
-              setPwm(13, 0, 4095);
-              break;
-            }
-            case enColor.YELLOW: {
-              setPwm(15, 0, 4095);
-              setPwm(14, 0, 4095);
-              setPwm(13, 0, 0);
-              break;
-            }
-        }
-    }
 }
