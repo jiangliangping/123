@@ -46,7 +46,7 @@ namespace GHBit {
         //% blockId="Angle2" block="3档"
         Angle2,
         //% blockId="Angle3" block="4档"
-        Angle3，
+        Angle3,
         //% blockId="Angle4" block="5档"
         Angle4,
         //% blockId="Angle5" block="6档"
