@@ -637,7 +637,7 @@ namespace GHBit {
         		 break;
           }
           case Angle.Angle7: {
-        		if( y > 889)
+        		if( y > 1500)
         	  	a = true;
         		else 
         			a = false;
