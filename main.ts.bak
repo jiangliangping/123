@@ -622,21 +622,21 @@ namespace GHBit {
         			a = false;
         		 break;
           }
-          case Angle.Angle6: {
+          case Angle.Angle5: {
         		if(y < 762 && y > 634)
         	  	a = true;
         		else 
         			a = false;
         		 break;
           }
-          case Angle.Angle7: {
+          case Angle.Angle6: {
         		if(y < 890 && y > 761)
         	  	a = true;
         		else 
         			a = false;
         		 break;
           }
-          case Angle.Angle8: {
+          case Angle.Angle7: {
         		if( y > 889)
         	  	a = true;
         		else 

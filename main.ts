@@ -47,13 +47,13 @@ namespace GHBit {
         Angle2,
         //% blockId="Angle3" block="4"
         Angle3
-        //% blockId="Angle0" block="5"
+        //% blockId="Angle4" block="5"
         Angle4 = 0,
-        //% blockId="Angle1" block="6"
+        //% blockId="Angle5" block="6"
         Angle5,
-        //% blockId="Angle2" block="7"
+        //% blockId="Angle6" block="7"
         Angle6,
-        //% blockId="Angle3" block="8"
+        //% blockId="Angle7" block="8"
         Angle7
     }
     export enum Beamstate {
