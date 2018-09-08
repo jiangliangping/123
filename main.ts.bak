@@ -602,14 +602,14 @@ namespace GHBit {
         		 break;
           }
           case Angle.Angle2: {
-        		if(y < 381 && y > 253)
+        		if(y < 361 && y > 253)
         	  	a = true;
         		else 
         			a = false;
         		 break;
           }
           case Angle.Angle3: {
-        		if(y < 508 && y > 380)
+        		if(y < 508 && y > 361)
         	  	a = true;
         		else 
         			a = false;
