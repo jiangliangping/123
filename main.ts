@@ -519,7 +519,8 @@ namespace GHBit {
             		setPwm(1, 0, 4095);
                 setPwm(2, 0, 0);
                 setPwm(3, 0, 0);
-                setPwm(4, 0, 4095);    	             
+                setPwm(4, 0, 4095); 
+                control.waitMicros(value1);    	             
                 setPwm(1, 0, 4095);
                 setPwm(2, 0, 4095);
                 setPwm(3, 0, 0);
@@ -547,8 +548,7 @@ namespace GHBit {
             }
             case STepper.Stepper0: {
             	while( a )
-            	{
-                control.waitMicros(value1);  
+            	{ 
                 setPwm(1, 0, 0);
                 setPwm(2, 0, 0);
                 setPwm(3, 0, 4095);
