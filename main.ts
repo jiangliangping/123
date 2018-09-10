@@ -563,15 +563,45 @@ namespace GHBit {
     //% blockGap=10
     //% color="#C814B8"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=12
-    export function Min_Motor(value: Motorshock): void {
+    export function Min_Motor(value: Angle): void {
         switch (value) {
-            case Motorshock.ON: {
-              setPwm(7, 0, 4095);
+            case Angle.Angle0: {
+              setPwm(7, 0, 0);
               setPwm(8, 0, 0);
               break;
             }
-            case Motorshock.OFF: {
-              setPwm(7, 0, 0);
+            case Angle.Angle1: {
+              setPwm(7, 0, 600);
+              setPwm(8, 0, 0);
+              break;
+            }
+            case Angle.Angle2: {
+              setPwm(7, 0, 1200);
+              setPwm(8, 0, 0);
+              break;
+            }
+            case Angle.Angle3: {
+              setPwm(7, 0, 1800);
+              setPwm(8, 0, 0);
+              break;
+            }
+            case Angle.Angle4: {
+              setPwm(7, 0, 2400);
+              setPwm(8, 0, 0);
+              break;
+            }
+            case Angle.Angle5: {
+              setPwm(7, 0, 3000);
+              setPwm(8, 0, 0);
+              break;
+            }
+            case Angle.Angle6: {
+              setPwm(7, 0, 3600);
+              setPwm(8, 0, 0);
+              break;
+            }
+            case Angle.Angle7: {
+              setPwm(7, 0, 4095);
               setPwm(8, 0, 0);
               break;
             }
