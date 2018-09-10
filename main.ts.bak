@@ -528,6 +528,7 @@ namespace GHBit {
                 setPwm(3, 0, 0);
                 setPwm(4, 0, 4095);
                 control.waitMicros(value1); 
+                a--;
               }  
               break;
             }
