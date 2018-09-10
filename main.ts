@@ -676,6 +676,7 @@ namespace GHBit {
         }
         return a;
     }
+    
     //% blockId=GHBit_Beam block="Beam|value %value"
     //% weight=85
     //% blockGap=10
