@@ -502,10 +502,10 @@ namespace GHBit {
     //% color="#C814B8"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=12
     export function Stepper_Motor(value: STepper, value1: number): void {
-    	  let a = 0;
+    	  let a = 64;
         switch (value) {
             case STepper.Stepper: { 
-            	for(a = 0; a < 60; a++)   
+            	while(a)   
             	{     	             
                 setPwm(1, 0, 4095);
                 setPwm(2, 0, 4095);
@@ -527,6 +527,7 @@ namespace GHBit {
                 setPwm(3, 0, 0);
                 setPwm(4, 0, 4095);
                 control.waitMicros(value1); 
+                a--;
               }  
               break;
             }
