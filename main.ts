@@ -528,7 +528,7 @@ namespace GHBit {
               break;
             }
             case STepper.Stepper0: {
-            	control.waitMicros(value1); 
+            	control.waitMicros(200); 
               setPwm(1, 0, 0);
               setPwm(2, 0, 0);
               setPwm(3, 0, 0);
