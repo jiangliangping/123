@@ -102,6 +102,15 @@ namespace GHBit {
         ON
     }
     
+    export enum speed {
+        //% blockId="speed1" block="1"
+        speed1 = 2000,
+        //% blockId="speed2" block="2"
+        speed2 = 3000,
+        //% blockId="speed3" block="3"
+        speed3 = 4000,
+    }
+    
     export enum enRocker {
         //% blockId="Nostate" block="无"
         Nostate = 0,
@@ -501,7 +510,7 @@ namespace GHBit {
     //% blockGap=10
     //% color="#C814B8"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=12
-    export function Stepper_Motor(value: STepper, value1: number): void {
+    export function Stepper_Motor(value: STepper, value1: speed): void {
     	  let a = 64;
     	  
         switch (value) {
@@ -537,22 +546,22 @@ namespace GHBit {
               setPwm(2, 0, 0);
               setPwm(3, 0, 0);
               setPwm(4, 0, 4095);
-              control.waitMicros(200);                       
+              control.waitMicros(value1);                       
               setPwm(1, 0, 0);
               setPwm(2, 0, 0);
               setPwm(3, 0, 4095);
               setPwm(4, 0, 0);
-              control.waitMicros(200);                         
+              control.waitMicros(value1);                         
               setPwm(1, 0, 0);
               setPwm(2, 0, 4095);
               setPwm(3, 0, 0);
               setPwm(4, 0, 0);
-              control.waitMicros(200);              
+              control.waitMicros(value1);              
               setPwm(1, 0, 4095);
               setPwm(2, 0, 0);
               setPwm(3, 0, 0);
               setPwm(4, 0, 0);
-              control.waitMicros(200);  
+              control.waitMicros(value1);  
               break;
             }
             case STepper.Stepper1: {
