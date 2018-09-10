@@ -513,17 +513,17 @@ namespace GHBit {
               setPwm(2, 0, 4095);
               setPwm(3, 0, 0);
               setPwm(4, 0, 0);
-              control.waitMicros(value1);                         
+              control.waitMicros(2000);                         
               setPwm(1, 0, 0);
               setPwm(2, 0, 0);
               setPwm(3, 0, 4095);
               setPwm(4, 0, 0);
-              control.waitMicros(value1);              
+              control.waitMicros(2000);              
               setPwm(1, 0, 0);
               setPwm(2, 0, 0);
               setPwm(3, 0, 0);
               setPwm(4, 0, 4095);
-              control.waitMicros(value1);   
+              control.waitMicros(2000);   
               break;
             }
             case STepper.Stepper0: {
@@ -531,22 +531,22 @@ namespace GHBit {
               setPwm(2, 0, 0);
               setPwm(3, 0, 0);
               setPwm(4, 0, 4095);
-              control.waitMicros(value1);                       
+              control.waitMicros(3000);                       
               setPwm(1, 0, 0);
               setPwm(2, 0, 0);
               setPwm(3, 0, 4095);
               setPwm(4, 0, 0);
-              control.waitMicros(value1);                         
+              control.waitMicros(3000);                         
               setPwm(1, 0, 0);
               setPwm(2, 0, 4095);
               setPwm(3, 0, 0);
               setPwm(4, 0, 0);
-              control.waitMicros(value1);              
+              control.waitMicros(3000);              
               setPwm(1, 0, 4095);
               setPwm(2, 0, 0);
               setPwm(3, 0, 0);
               setPwm(4, 0, 0);
-              control.waitMicros(value1);  
+              control.waitMicros(3000);  
               break;
             }
             case STepper.Stepper1: {
