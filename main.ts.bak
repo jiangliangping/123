@@ -505,9 +505,9 @@ namespace GHBit {
     	  let a = 64;
         switch (value) {
             case STepper.Stepper: { 
-            	while(a)   
-            	{   
-            		a = a-1;  	             
+            	//while(a)   
+            //	{   
+            	//	a = a-1;  	             
                 setPwm(1, 0, 4095);
                 setPwm(2, 0, 4095);
                 setPwm(3, 0, 0);
@@ -528,8 +528,8 @@ namespace GHBit {
                 setPwm(3, 0, 0);
                 setPwm(4, 0, 4095);
                 control.waitMicros(value1); 
-                a--;
-              }  
+               // a--;
+           //   }  
               break;
             }
             case STepper.Stepper0: {
