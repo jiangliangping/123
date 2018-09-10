@@ -496,12 +496,12 @@ namespace GHBit {
         }
     }
     
-    //% blockId=GHBit_Stepper_Motor block="Stepper_Motor|value %value"
+    //% blockId=GHBit_Stepper_Motor block="Stepper_Motor|value %value|value1 %value1"
     //% weight=88
     //% blockGap=10
     //% color="#C814B8"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=12
-    export function Stepper_Motor(value: STepper value1: number): void {
+    export function Stepper_Motor(value: STepper, value1: number): void {
         switch (value) {
             case STepper.Stepper: {           	             
               setPwm(1, 0, 4095);
