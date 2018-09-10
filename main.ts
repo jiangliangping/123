@@ -509,22 +509,22 @@ namespace GHBit {
               setPwm(2, 0, 0);
               setPwm(3, 0, 0);
               setPwm(4, 0, 0);
-              control.waitMicros(200000);                       
+              control.waitMicros(value1);                       
               setPwm(1, 0, 0);
               setPwm(2, 0, 4095);
               setPwm(3, 0, 0);
               setPwm(4, 0, 0);
-              control.waitMicros(200000);                         
+              control.waitMicros(value1);                         
               setPwm(1, 0, 0);
               setPwm(2, 0, 0);
               setPwm(3, 0, 4095);
               setPwm(4, 0, 0);
-              control.waitMicros(200000);              
+              control.waitMicros(value1);              
               setPwm(1, 0, 0);
               setPwm(2, 0, 0);
               setPwm(3, 0, 0);
               setPwm(4, 0, 4095);
-              control.waitMicros(200000);   
+              control.waitMicros(value1);   
               break;
             }
             case STepper.Stepper0: {
