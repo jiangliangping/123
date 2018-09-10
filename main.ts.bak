@@ -510,7 +510,7 @@ namespace GHBit {
     //% blockGap=10
     //% color="#C814B8"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=12
-    export function Stepper_Motor(value: STepper, value1: number): void {
+    export function Stepper_Motor(value: STepper, value1: speed): void {
     	  let a = 64;
     	  
         switch (value) {
