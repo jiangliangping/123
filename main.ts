@@ -108,7 +108,7 @@ namespace GHBit {
         //% blockId="speed2" block="2"
         speed2 = 3000,
         //% blockId="speed3" block="3"
-        speed3 = 6000,
+        speed3 = 4000,
     }
     
     export enum enRocker {
