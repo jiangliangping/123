@@ -502,28 +502,32 @@ namespace GHBit {
     //% color="#C814B8"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=12
     export function Stepper_Motor(value: STepper, value1: number): void {
+    	  let a = 0;
         switch (value) {
-            case STepper.Stepper: {         	             
-              setPwm(1, 0, 4095);
-              setPwm(2, 0, 4095);
-              setPwm(3, 0, 0);
-              setPwm(4, 0, 0);
-              control.waitMicros(value1);                       
-              setPwm(1, 0, 0);
-              setPwm(2, 0, 4095);
-              setPwm(3, 0, 4095);
-              setPwm(4, 0, 0);
-              control.waitMicros(value1);                         
-              setPwm(1, 0, 0);
-              setPwm(2, 0, 0);
-              setPwm(3, 0, 4095);
-              setPwm(4, 0, 4095);
-              control.waitMicros(value1);              
-              setPwm(1, 0, 4095);
-              setPwm(2, 0, 0);
-              setPwm(3, 0, 0);
-              setPwm(4, 0, 4095);
-              control.waitMicros(value1);   
+            case STepper.Stepper: { 
+            	for(a = 0;a<60;a++)   
+            	{     	             
+                setPwm(1, 0, 4095);
+                setPwm(2, 0, 4095);
+                setPwm(3, 0, 0);
+                setPwm(4, 0, 0);
+                control.waitMicros(value1);                       
+                setPwm(1, 0, 0);
+                setPwm(2, 0, 4095);
+                setPwm(3, 0, 4095);
+                setPwm(4, 0, 0);
+                control.waitMicros(value1);                         
+                setPwm(1, 0, 0);
+                setPwm(2, 0, 0);
+                setPwm(3, 0, 4095);
+                setPwm(4, 0, 4095);
+                control.waitMicros(value1);              
+                setPwm(1, 0, 4095);
+                setPwm(2, 0, 0);
+                setPwm(3, 0, 0);
+                setPwm(4, 0, 4095);
+                control.waitMicros(value1); 
+              }  
               break;
             }
             case STepper.Stepper0: {
