@@ -511,8 +511,7 @@ namespace GHBit {
     //% color="#C814B8"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=12
     export function Stepper_Motor(value: STepper, value1: speed): void {
-    	  let a = 64;
-    	  
+    	  let a = 64;  
         switch (value) {
             case STepper.Stepper: { 
             	while( a )    
@@ -543,6 +542,7 @@ namespace GHBit {
                 control.waitMicros(value1); 
                 a--;
               }  
+                a = 0;
               break;
             }
             case STepper.Stepper0: {
@@ -576,6 +576,7 @@ namespace GHBit {
                 control.waitMicros(value1);  
                  a--;
               }
+                a = 0;
               break;
             }
             case STepper.Stepper1: {
