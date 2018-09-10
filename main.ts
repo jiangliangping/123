@@ -103,6 +103,8 @@ namespace GHBit {
     }
     
     export enum speed {
+    	  //% blockId="speed0" block="0"
+        speed0 = 0,
         //% blockId="speed1" block="1"
         speed1 = 2000,
         //% blockId="speed2" block="2"
