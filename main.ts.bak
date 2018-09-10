@@ -505,7 +505,7 @@ namespace GHBit {
     	  let a = 64;
         switch (value) {
             case STepper.Stepper: { 
-            	while(a)   
+            	while( a )    
             	{     	             
                 setPwm(1, 0, 4095);
                 setPwm(2, 0, 4095);
