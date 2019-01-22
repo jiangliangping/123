@@ -727,6 +727,21 @@ namespace GHBit {
             }
         }
     }
+    //% blockId=GHBit_Touch block="Touch"
+    //% weight=84
+    //% blockGap=10
+    //% color="#C814B8"
+    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=6
+    export function Touch(): number {
+			let a = 0;
+			let b = 0;
+			let c = 0;
+			pins.i2cWriteNumber(80,8,NumberFormat.Int8BE,false);
+			a = pins.i2cReadNumber(80, NumberFormat.UInt8BE, true);
+			b = pins.i2cReadNumber(80, NumberFormat.UInt8BE, false);
+			c = (b<<4)|a;
+			return c;
+    }
     
     
 }
