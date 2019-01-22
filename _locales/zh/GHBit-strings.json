@@ -13,6 +13,5 @@
   "GHBit.Stepper_Motor|block": "步进电机| %value|速度%value1",
   "GHBit.Min_Motor|block": "风扇| %value",
   "GHBit.Rotate|block": "旋钮角度|%value",
-  "GHBit.Beam|block": "光照|%value",
-   "GHBit.Touch|block": "触摸返回"
+  "GHBit.Beam|block": "光照|%value"
 }
