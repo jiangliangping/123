@@ -14,4 +14,5 @@
   "GHBit.Min_Motor|block": "风扇| %value",
   "GHBit.Rotate|block": "旋钮角度|%value",
   "GHBit.Beam|block": "光照|%value"
+   "GHBit.Touch|block": "触摸返回"
 }
