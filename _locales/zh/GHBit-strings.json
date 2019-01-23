@@ -14,7 +14,7 @@
   "GHBit.Min_Motor|block": "风扇| %value",
   "GHBit.Rotate|block": "旋钮角度|%value",
   "GHBit.Beam|block": "光照|%value",
-   "GHBit.Touch|block": "触摸返回|value %value",
+   "GHBit.Touch|block": "触摸返回|%value",
   
   "GHBit.STepper.Stepper|block": "正转",
   "GHBit.STepper.Stepper0|block": "反转",
@@ -50,6 +50,6 @@
 	"GHBit.enColor.WHITE|block": "白色",
 	"GHBit.enColor.CYAN|block": "青色",
 	"GHBit.enColor.PINKISH|block": "品红",
-	"GHBit.enColor.YELLOW|block": "黄色"
-
+	"GHBit.enColor.YELLOW|block": "黄色",
+	
 }
