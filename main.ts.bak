@@ -95,11 +95,23 @@ namespace GHBit {
         S3,
         S4
     }
-   export enum enServ {  
-        S1 = 1,
-        #S2 = 3,
-        #S3 = 4,
-        S4 = 9
+   export enum touch {
+        
+        C = 4,
+        CD = 8,
+        D = 16,
+        DF = 32,
+        E = 64,
+        F = 128,
+        FG = 256,
+        G = 512,
+        GA = 1024,
+        A = 2056,
+        AB = 4096,
+        B = 8192, 
+        L = 2,
+        H = 16384,
+        M = 1
     }
     export enum Motorshock {
         //% blockId="OFF" block="OFF"
@@ -737,7 +749,7 @@ namespace GHBit {
     //% blockGap=10
     //% color="#C814B8"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=6
-    export function Touch(): number {
+    export function Touch(value: touch): boolean {
 			let a = 0;
 			let b = 0;
 			let c = 0;
@@ -745,7 +757,10 @@ namespace GHBit {
 			a = pins.i2cReadNumber(80, NumberFormat.UInt8BE, true);
 			b = pins.i2cReadNumber(80, NumberFormat.UInt8BE, false);
 			c = (b<<8)|a;
-			return c;
+			if(c==value)
+				return 1;
+			else
+				return 0;
     }
     
     
