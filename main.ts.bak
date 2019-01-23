@@ -758,12 +758,12 @@ namespace GHBit {
             }
         }
     }
-    //% blockId=GHBit_Touch block="Touch|value %value"
+    //% blockId=GHBit_Touch block="Touch"
     //% weight=84
     //% blockGap=10
     //% color="#C814B8"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=6
-    export function Touch(value: touch): boolean {
+    export function Touch(): boolean {
 			let a = 0;
 			let b = 0;
 			let c = 0;
@@ -771,7 +771,7 @@ namespace GHBit {
 			a = pins.i2cReadNumber(80, NumberFormat.UInt8BE, true);
 			b = pins.i2cReadNumber(80, NumberFormat.UInt8BE, false);
 			c = (b<<8)|a;
-			if(c==value)
+			if(c==1)
 				return 1;
 			else
 				return 0;

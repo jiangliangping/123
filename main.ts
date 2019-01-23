@@ -763,7 +763,7 @@ namespace GHBit {
     //% blockGap=10
     //% color="#C814B8"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=6
-    export function Touch(): boolean {
+    export function Touch(): number {
 			let a = 0;
 			let b = 0;
 			let c = 0;
