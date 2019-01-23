@@ -95,6 +95,12 @@ namespace GHBit {
         S3,
         S4
     }
+   export enum enServ {  
+        S1 = 1,
+        S2,
+        S3,
+        S4
+    }
     export enum Motorshock {
         //% blockId="OFF" block="OFF"
         OFF = 0,
