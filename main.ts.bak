@@ -101,18 +101,18 @@ namespace GHBit {
         C = 4,
         #C=8,
         D =16,
-        #D=,
-        E =,
-        F = ,
-        #F
+        #D=1,
+        E =1,
+        F =1 ,
+        #F=1,
         G = 1,
-        #G =,
-        A =,
-        #A=
-        B = ,
-        L=,
-        M=,
-        H=,
+        #G =1,
+        A =1,
+        #A=1,
+        B =1 ,
+        L=1,
+        M=1,
+        H=1,
         
     }
     export enum Motorshock {
