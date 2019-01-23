@@ -96,21 +96,35 @@ namespace GHBit {
         S4
     }
    export enum touch {
-        
+        //% blockId="C" block="C"
         C = 4,
+        //% blockId="CD" block="CD"
         CD = 8,
+        //% blockId="D" block="D"
         D = 16,
+        //% blockId="DF" block="DF"
         DF = 32,
+        //% blockId="E" block="E"
         E = 64,
+        //% blockId="F" block="F"
         F = 128,
+        //% blockId="FG" block="FG"
         FG = 256,
+        //% blockId="G" block="G"
         G = 512,
+        //% blockId="GA" block="GA"
         GA = 1024,
+        //% blockId="A" block="A"
         A = 2056,
+        //% blockId="AB" block="AB"
         AB = 4096,
+        //% blockId="B" block="B"
         B = 8192, 
+        //% blockId="L" block="L"
         L = 2,
+        //% blockId="H" block="H"
         H = 16384,
+        //% blockId="M" block="M"
         M = 1
     }
     export enum Motorshock {
