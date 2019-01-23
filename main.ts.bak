@@ -744,7 +744,7 @@ namespace GHBit {
             }
         }
     }
-    //% blockId=GHBit_Touch block="Touch"
+    //% blockId=GHBit_Touch block="Touch|value %value"
     //% weight=84
     //% blockGap=10
     //% color="#C814B8"
