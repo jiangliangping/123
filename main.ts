@@ -95,11 +95,23 @@ namespace GHBit {
         S3,
         S4
     }
-   export enum enServ {  
-        S1 = 1,
-        #S2 = 3,
-        #S3 = 4,
-        S4 = 9
+   export enum touch {
+        
+        C = 4,
+        CD = 8,
+        D = 16,
+        DF = 32,
+        E = 64,
+        F = 128,
+        FG = 256,
+        G = 512,
+        GA = 1024,
+        A = 2056,
+        AB = 4096,
+        B = 8192, 
+        L = 2,
+        H = 16384,
+        M = 1
     }
     export enum Motorshock {
         //% blockId="OFF" block="OFF"
