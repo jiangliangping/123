@@ -115,7 +115,7 @@ namespace GHBit {
         //% blockId="GA" block="GA"
         GA = 1024,
         //% blockId="A" block="A"
-        A = 2056,
+        A = 2048,
         //% blockId="AB" block="AB"
         AB = 4096,
         //% blockId="B" block="B"
