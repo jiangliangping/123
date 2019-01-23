@@ -758,7 +758,7 @@ namespace GHBit {
 			pins.i2cWriteNumber(80,8,NumberFormat.Int8BE,false);
 			a = pins.i2cReadNumber(80, NumberFormat.UInt8BE, true);
 			b = pins.i2cReadNumber(80, NumberFormat.UInt8BE, false);
-			c = (b<<8)|a;
+			c = b|a;
 			return c;
     }
     
